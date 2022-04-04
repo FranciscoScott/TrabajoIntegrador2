@@ -3,7 +3,7 @@ const ProfileRouter = express.Router();
 
 
 router.get('/', function(req, res, next) {
-  res.send('Profile',);
+  res.render('Profile', { title: 'Profile' });
 });
 
 module.exports = ProfileRouter ;

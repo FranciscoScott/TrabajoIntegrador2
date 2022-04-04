@@ -3,7 +3,7 @@ const RegisterRouter = express.Router();
 
 
 router.get('/', function(req, res, next) {
-  res.send('Register',);
+  res.render('Register', { title: 'Register' } );
 });
 
 module.exports = RegisterRouter ;
