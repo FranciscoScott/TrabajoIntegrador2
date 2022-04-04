@@ -1,9 +1,9 @@
 const express = require('express');
-const RegisterRouter = express.Router();
+const router = express.Router();
 
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   res.render('Register', { title: 'Register' } );
 });
 
-module.exports = RegisterRouter ;
+module.exports = router ;

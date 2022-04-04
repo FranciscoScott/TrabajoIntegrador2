@@ -1,9 +1,9 @@
 const express = require('express');
-const ProfileRouter = express.Router();
+const router = express.Router();
 
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   res.render('Profile', { title: 'Profile' });
 });
 
-module.exports = ProfileRouter ;
+module.exports = router ;
