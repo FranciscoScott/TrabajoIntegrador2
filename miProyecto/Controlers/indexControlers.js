@@ -2,13 +2,13 @@ const zapatilas = require("../dataBase/Data.js");
 
 const controller = {
     index: function(req, res) {
-        res.send('index');
+        res.render('index');
     },
     login: function(req, res) {
-        res.send('login');
+        res.render('login');
     },
     register: function(req, res) {
-        res.send('index');
+        res.render('index');
     }
 }
 
