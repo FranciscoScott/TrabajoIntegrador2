@@ -5,8 +5,8 @@ const ProductsControlers = require('../Controlers/ProductsControles')
 
 router.get('/', ProductsControlers.index)
 
-router.get('/login',ProductsControlers.login)
+router.get('/add', ProductsControlers.index)
 
-router.get('/register',ProductsControlers.register)
+
 
 module.exports = router ;

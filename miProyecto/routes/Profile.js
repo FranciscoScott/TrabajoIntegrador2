@@ -5,9 +5,6 @@ const ProfileControlers = require('../Controlers/ProfileControles')
 
 router.get('/', ProfileControlers.index)
 
-router.get('/login',ProfileControlers.login)
-
-router.get('/register',ProfileControlers.register)
 
 
 
