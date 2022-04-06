@@ -2,13 +2,14 @@ const zapatilas = require("../dataBase/Data.js");
 
 const controller = {
     index: function(req, res) {
-        res.render('index')
+        let infoZapatillas = zapatilas.lista
+        res.render('index', {'listadoZapatillaz' :infoZapatillas})
     },
     login: function(req, res) {
         res.render('login')
     },
     register: function(req, res) {
-        res.render('index')
+        res.render('register')
     }
 }
 
