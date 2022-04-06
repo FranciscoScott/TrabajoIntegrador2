@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const ProductControlers = require('../Controlers/ProductControlers')
+const ProductsControlers = require('../Controlers/ProductsControles')
 
 
-router.get('/', ProductControlers.index)
+router.get('/', ProductsControlers.index)
 
-router.get('/login',ProductControlers.login)
+router.get('/login',ProductsControlers.login)
 
-router.get('/register',ProductControlers.register)
+router.get('/register',ProductsControlers.register)
 
 module.exports = router ;
