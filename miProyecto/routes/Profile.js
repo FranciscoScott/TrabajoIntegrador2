@@ -5,7 +5,7 @@ const ProfileControlers = require('../Controlers/ProfileControles')
 
 router.get('/', ProfileControlers.index)
 
-router.get('/Profile', ProfileControlers.Profile)
+router.get('/detalle', ProfileControlers.Profile)
 
 
 
