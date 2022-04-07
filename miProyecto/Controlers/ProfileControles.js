@@ -8,8 +8,12 @@ const controller = {
         res.render('login');
     },
     register: function(req, res) {
-        res.render('index');
+        res.render('register');
+    },
+    Profile: function(req, res) {
+        res.render('Profile');
     }
+    
 }
 
 module.exports = controller;

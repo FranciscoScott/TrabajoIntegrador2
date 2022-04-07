@@ -180,7 +180,10 @@ hr {
   font-weight: 400;
   color:yellow;
 }
-
+.Registercolor{
+  color: yellow;
+  display: flex;  
+}
 .product-box {
   background-color: #ffffff;
   border-radius: 5px;
