@@ -3,7 +3,7 @@ const zapatilas = require("../dataBase/Data.js");
 const controller = {
     index: function(req, res) {
         let infoZapatillas = zapatilas.lista
-        res.render('index', {'listadoZapatillaz' :infoZapatillas})
+        res.render('Product', {'listadoZapatillaz' :infoZapatillas})
     },
     login: function(req, res) {
         res.render('login')
