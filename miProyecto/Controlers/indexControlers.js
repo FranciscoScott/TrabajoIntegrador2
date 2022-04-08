@@ -10,7 +10,11 @@ const controller = {
     },
     register: function(req, res) {
         res.render('register');
+    }, 
+    searchresults:  function(req, res){
+        res.render('search-results', {shoes: zapatillas.shoes});
     }
+
 }
 
 module.exports = controller;
