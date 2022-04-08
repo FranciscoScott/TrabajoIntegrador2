@@ -1,4 +1,8 @@
 const zapatillas = {
+    Comentarios: [{
+        coments: "",
+
+    }],
     users: [{
         usuarios: "",
 
