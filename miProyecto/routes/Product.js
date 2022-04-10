@@ -7,6 +7,6 @@ router.get('/', ProductsControlers.index)
 
 router.get('/add', ProductsControlers.index)
 
+router.get('/detalle', ProductsControlers.Product)
 
-
-module.exports = router ;
+module.exports = router 

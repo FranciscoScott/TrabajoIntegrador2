@@ -1,32 +1,36 @@
 const zapatillas = {
     Comentarios: [{
-
         imagenDelPerfil: "/images/comprador1.jpg",
         nombreDelUsuario: "Juan Manuel Garcia",
         textoDelComentario: "Gran calidad de las zapatillas, la verdad mejor de lo que me esperaba.",
-
+    },
+    {
         imagenDelPerfil: "/images/compradora2.jpg",
         nombreDelUsuario: "Maria Antonieta Gomez",
         textoDelComentario: "De casualidad tienen stock en talle 38?",
-        
+    },
+    {
         imagenDelPerfil: "/images/comprador1.jpg",
         nombreDelUsuario: "Julian Alvarez",
         textoDelComentario: "Tremendas! Estan muy cancheras y son excesivamente comodas!",
-        
+    },
+    {
         imagenDelPerfil: "/images/compradora2.jpg",
         nombreDelUsuario: "Carolina Herrera",
         textoDelComentario: "Tienen en violeta tambien?",
-        
+    },
+    {
         imagenDelPerfil: "/images/comprador1.jpg",
         nombreDelUsuario: "Jorge Nerosos",
         textoDelComentario: "Por fin las encontre! Estuve semanas buscandolas, estan idas!",
-        
+    },
+    {
         imagenDelPerfil: "/images/compradora2.jpg",
         nombreDelUsuario: "Clementina Giaconda",
         textoDelComentario: "Se ven muy buenas, lastima que no tienen envio a Salta.",
-        
+    },
 
-    }],
+    ],
     users: [{
         nombreDeUsuario: "",
 

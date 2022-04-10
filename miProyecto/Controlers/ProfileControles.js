@@ -3,7 +3,7 @@ const zapatillas = require("../dataBase/Data.js");
 
 const controller = {
     index: function(req, res) {
-        res.render('index', {shoes: zapatillas.shoes} );
+        res.render('index', {shoes: zapatillas.shoes , Comentarios: zapatillas.Comentarios } );
     },
     login: function(req, res) {
         res.render('login');
@@ -12,7 +12,10 @@ const controller = {
         res.render('register');
     },
     Profile: function(req, res) {
-        res.render('profile' , {shoes: zapatillas.shoes});
+        res.render('profile' , {shoes: zapatillas.shoes , Comentarios: zapatillas.Comentarios});
+    },
+     Product: function(req, res) {
+        res.render('product',{shoes: zapatillas.shoes , Comentarios: zapatillas.Comentarios })
     }
     
 }

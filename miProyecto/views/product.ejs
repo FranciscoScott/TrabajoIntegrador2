@@ -25,19 +25,16 @@
 						Zapatillas Nike "Jordan Black"</p>
 				</article>
 
-			
-			<% for ( let i=0 ; i < Comentarios.length; i++) { %>
-				<div class="col-12 col-sm-6 col-lg-3">
-					
-								<img src= <%= Comentarios[i].imagenDelPerfil %> alt="perfil de los users">
-								<h2> <%= Comentarios[i].nombreDelUsuario %> </h2>
-								<p> <%= Comentarios[i].textoDelComentario%> </p>
-								
-							
-				</div>
-				<% } %>
-
-
+				<% for (let i = 0; i < Comentarios.length; i++) { %>
+					<article>
+						<img src= <%= Comentarios[i].imagenDelPerfil %> alt="">
+						<div class="data">
+							<p class="user">
+							<strong> <a href="/Profile"><%= Comentarios[i].nombreDelUsuario%> </a> </strong>
+							<%= Comentarios[i].textoDelComentario%> </p>
+						</div>
+					</article>
+					<% } %>
 			
 					<form class="form" action="" method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
