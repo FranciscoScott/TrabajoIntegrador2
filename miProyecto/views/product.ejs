@@ -25,16 +25,64 @@
 						Zapatillas Nike "Jordan Black"</p>
 				</article>
 
-				<% for (let i = 0; i < Comentarios.length; i++) { %>
+				<% for (let i = 0; i < comentarios.length; i++) { %>
 					<article>
-						<img src= <%= Comentarios[i].imagenDelPerfil %> alt="">
+						<img src= <%= comentarios[i].imagenDelPerfil %> alt="">
 						<div class="data">
 							<p class="user">
-							<strong> <a href="/Profile"><%= Comentarios[i].nombreDelUsuario%> </a> </strong>
-							<%= Comentarios[i].textoDelComentario%> </p>
+							<strong> <a href="/Profile"><%= comentarios[i].nombreDelUsuario%> </a> </strong>
+							<%= comentarios[i].textoDelComentario%> </p>
 						</div>
 					</article>
 					<% } %>
+
+
+					Manera 2
+					<div>
+
+						<img src="/images/comprador1.jpg" alt="">
+						<a href="/Profile"> <% comentarios[0].nombreDelUsuario %> </a>
+						<p><%= comentarios[0].textoDelComentario%></p>
+
+					</div>
+					<div>
+
+						<img src="/images/compradora2.jpg" alt="">
+						<a href="/Profile"> <% comentarios[1].nombreDelUsuario %> </a>
+						<p><%= comentarios[1].textoDelComentario%></p>
+
+					</div>
+					<div>
+
+						<img src="/images/comprador1.jpg" alt="">
+						<a href="/Profile"> <% comentarios[2].nombreDelUsuario %> </a>
+						<p><%= comentarios[2].textoDelComentario%></p>
+
+					</div>
+					<div>
+
+						<img src="/images/compradora2.jpg" alt="">
+						<a href="/Profile"> <% comentarios[3].nombreDelUsuario %> </a>
+						<p><%= comentarios[3].textoDelComentario%></p>
+
+						faltan mas, pero hay que ver si asi iria funcionando....
+					</div>
+
+					Manera 3
+
+					<%for (let i=0 ; i< comentarios.length; i++) { %>
+						<div class="info-comprador">
+							<section class="reseña-producto">
+								<div>
+									<img src=<%= comentarios[i].imagen %> alt="">
+								</div>
+								<a href="/Profile">
+									<p> <%= comentarios[i].nombreDelUsuario %> </p>
+								</a>
+								<p> <%= comentarios[i].textoDelComentario %></p>
+									
+							</section>
+						</div>
 			
 					<form class="form" action="" method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">

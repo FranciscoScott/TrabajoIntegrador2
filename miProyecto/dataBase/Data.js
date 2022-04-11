@@ -1,5 +1,5 @@
 const zapatillas = {
-    Comentarios: [{
+    comentarios: [{
         imagenDelPerfil: "/images/comprador1.jpg",
         nombreDelUsuario: "Juan Manuel Garcia",
         textoDelComentario: "Gran calidad de las zapatillas, la verdad mejor de lo que me esperaba.",
@@ -32,10 +32,45 @@ const zapatillas = {
 
     ],
     users: [{
-        nombreDeUsuario: "",
+            imagenDelUusario: "/images/comprador1.jpg",
+            nombreDeUsuario: "Juan Manuel Garcia",
+            emailDelUsuario: "jmgarcia@gmail.com",
+        },
+
+        {
+             imagenDelUusario: "/images/compradora2.jpg",
+             nombreDeUsuario: "Maria Antonieta Gomez",
+             emailDelUsuario: "magomez@gmail.com",
+        },
+
+        {
+            imagenDelUusario: "/images/comprador1.jpg",
+            nombreDeUsuario: "Julian Alvarez",
+            emailDelUsuario: "jalvarez@gmail.com",
+        },
+
+        {
+            imagenDelUusario: "/images/compradora2.jpg",
+            nombreDeUsuario: "Carolina Herrera",
+            emailDelUsuario: "cherrera@gmail.com",
+        },
+
+        {
+            imagenDelUusario: "/images/comprador1.jpg",
+            nombreDeUsuario: "Jorge Nerosos",
+            emailDelUsuario: "jnerosos@gmail.com",
+        },
+
+        {
+            imagenDelUusario: "/images/compradora2.jpg",
+            nombreDeUsuario: "Clementina Giaconda",
+            emailDelUsuario: "cgiaconda@gmail.com",
+        },
 
 
-    }],
+            
+    
+    ],
     shoes: [{
             marca: "nike",
             modelo: "Jordan 1",
