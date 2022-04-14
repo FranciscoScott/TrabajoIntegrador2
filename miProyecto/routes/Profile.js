@@ -3,10 +3,9 @@ const router = express.Router();
 const ProfileControlers = require('../Controlers/ProfileControles')
 
 
-router.get('/', ProfileControlers.index)
+router.get('/', ProfileControlers.Profile)
 
-router.get('/detalle', ProfileControlers.Profile)
-
+router.get('/edit', ProfileControlers.Profile)
 
 
 module.exports = router ;

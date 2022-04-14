@@ -3,10 +3,12 @@ const router = express.Router();
 const ProductsControlers = require('../Controlers/ProductsControles')
 
 
-router.get('/', ProductsControlers.index)
 
-router.get('/add', ProductsControlers.index)
 
-router.get('/detalle', ProductsControlers.Product)
+router.get('/add', ProductsControlers.add)
+
+router.get('/detalle', ProductsControlers.detail)
+
+router.get('/edit', ProductsControlers.edit)
 
 module.exports = router 
