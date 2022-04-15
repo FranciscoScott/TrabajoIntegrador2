@@ -2,11 +2,11 @@
 <html lang="es">
 <!-- Include Head -->
 
-<%- include('./partials/Head') %> 
+<%- include('./Partials/Head') %> 
 
 <body>
 	<!-- Header -->
-	<%- include('./partials/Header') %> 
+	<%- include('./Partials/headerLogueado') %> 
 	<!-- /Header -->
 
 	<!-- Novedades -->
@@ -16,34 +16,35 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá va el formulario para agregar prodcutos al catálogo. <br>
+			<h2 class="col-12"> <i>///////////////////////////////////////// <br> 
+				Acá va el formulario para agregar prodcutos al catálogo. <br>
 			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos. <br>
 			Eliminen estás líneas y coloquen el formulario. <br>
 			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
 
 				<form action="" method="get">
 							
-					<label for="imagen">Imagen del Producto</label>
+					<label for="imagen"><%= shoes.imagen %> </label>
 					<input type="file" name="imagen" id="imagen">
 
-					<label for="nombreDelProducto">Nombre del producto</label>
+					<label for="nombreDelProducto"> <%= shoes.modelo %> </label>
 					<input type="text" name="nombreDelProducto" id="nombreDelProducto">
 
-					<label for="descripcion">Descripcion del producto</label>
+					<label for="descripcion"><%= shoes.descripcion %></label>
 					<input type="text" name="descripcion" id="descripcion">
 
 					<label for="fechaDeCarga">Fecha de Carga</label>
 					<input type="date" name="fechaDeCarga" id="fechaDeCarga">
 
-
+					  
 
 				</form>
-			////////////////
+			//////////////// porque el uso de los tags para llamar a propiedades de variables del database??//
 			</h2>
 
 
 	<!-- footer -->
-	<%- include('./partials/footer') %> 
+	<%- include('./Partials/Footer') %> 
 	<!-- /footer -->
 	
 </body>

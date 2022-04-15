@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-<%- include('./partials/Head') %> 
+<%- include('./Partials/Head') %> 
 <body>
 	<!-- Header -->
-	<%- include('./partials/Header') %> 
+	<%- include('./Partials/headerLogueado') %> 
 	<!-- /Header -->
 
 	<!-- Datos del usuario -->
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img src="https://via.placeholder.com/150" alt="foto de perfil" class="foto-perfil-usuario">
+				<img src="/dataBase/Data.js/zapatillas/users/imagenDelUusario" alt="foto de perfil" class="foto-perfil-usuario">
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title">Nombre del usuario 
+					<h1 class="main-title"><%= users[i].nombreDelUsuario%>
 						<a href="/Profile">
 							<i class="fas fa-cog"></i>
 						</a>
@@ -23,6 +23,9 @@
 					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
 				</div>
 				<div>
+					<div>
+						<h1 class="mail-del-user"><%= users[i].emailDelUsuario%></h1>
+					</div>
 					<ul class="Registercolor">
 						<li>8 productos</li>
 						<li>200 seguidores</li>
@@ -61,7 +64,7 @@
 
 
 	<!-- footer -->
-	<%- include('./partials/footer') %> 
+	<%- include('./Partials/Footer') %> 
 	<!-- /footer -->
 
 </body>	

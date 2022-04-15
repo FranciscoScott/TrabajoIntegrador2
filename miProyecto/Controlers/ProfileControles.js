@@ -12,7 +12,7 @@ const controller = {
         res.render('profile' , {users: zapatillas.imagenDelUsuario , users: zapatillas.nombreDelUsuario , users: zapatillas.emailDelUsuario});
     },
     ProfileEdit: function(req, res) {
-        res.render('profileEdit');
+        res.render('profileEdit' , {users: zapatillas.imagenDelUsuario , users: zapatillas.nombreDelUsuario , users: zapatillas.emailDelUsuario});
     },
     // para mi en el 2do paraemtro de Profile va esto: "users: zapatillas.imagenDelUsuario , users: zapatillas.nombreDelUsuario , users: zapatillas.emailDelUsuario, por eso lo agregue, pero//
      

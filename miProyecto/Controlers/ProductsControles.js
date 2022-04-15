@@ -3,7 +3,7 @@ const zapatilas = require("../dataBase/Data.js");
 
 const controller = {
     detail: function(req, res) {
-        res.render('product' , {shoes: zapatillas.shoes , Comentarios: zapatillas.comentarios})
+        res.render('product' , {shoes: zapatillas.shoes , comentarios: zapatillas.comentarios})
     },
     add: function(req, res) {
         res.render('product')
