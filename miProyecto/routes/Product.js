@@ -5,6 +5,8 @@ const ProductsControlers = require('../Controlers/ProductsControles')
 
 
 
+router.get('/', ProductsControlers.detail)
+
 router.get('/add', ProductsControlers.add)
 
 router.get('/detalle', ProductsControlers.detail)

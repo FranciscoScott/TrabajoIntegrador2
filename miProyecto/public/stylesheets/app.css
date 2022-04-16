@@ -270,6 +270,23 @@ hr {
   box-shadow: 0 0 5px var(--green);
 }
 
+.user-estilo{
+  color: #EAC926;
+}
+
+.fotoDeUsers{
+  height: 50px;
+  width: 70px;
+}
+
+.tamañoFotosPerfil{
+  display: list-item;
+}
+
+.Registercolor{
+  display: list-item;
+  
+}
 /*====== Footer ======*/
 .main-footer {
   background-color:black;

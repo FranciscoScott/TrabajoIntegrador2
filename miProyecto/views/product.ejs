@@ -17,26 +17,28 @@
 				<a href="/Product/add">Editar</a>
 			</p>
 		</div>
+
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="images/jordanBlack.png" alt="" class="product-detail-img">
+					<img src="/images/jordanBlack.png" alt="" class="product-detail-img">
 					<p class="product-detail-description">
 						Zapatillas Nike "Jordan Black"</p>
 				</article>
-
-				<% for (let i = 0; i < comentarios.length; i++) { %>
-					<article>
-						<img class="fotoDeUsers" src= <%= comentarios[i].imagenDelPerfil %> alt="">
-						<div class="data">
-							<p class="user">
-							<strong> <a href="/Profile"><%= comentarios[i].nombreDelUsuario%> </a> </strong>
-							<br>
-							<%= comentarios[i].textoDelComentario%> </p>
-						</div>
-					</article>
-					<% } %>
-
+				
+				<div class="tamañoFotosPerfil">
+					<% for (let i = 0; i < comentarios.length; i++) { %>
+						<article>
+							<img class="fotoDeUsers" src= <%= comentarios[i].imagenDelPerfil %> alt="">
+							<div class="data">
+								<p class="user">
+								<strong> <a href="/Profile"><%= comentarios[i].nombreDelUsuario%> </a> </strong>
+								<br>
+								<%= comentarios[i].textoDelComentario%> </p>
+							</div>
+						</article>
+						<% } %>
+				</div>
 
 					
 			

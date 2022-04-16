@@ -35,36 +35,55 @@ const zapatillas = {
             imagenDelUusario: "/images/comprador1.jpg",
             nombreDeUsuario: "Juan Manuel Garcia",
             emailDelUsuario: "jmgarcia@gmail.com",
+            contraseñaDelUsuario:"abcd1234",
+            nacimientoDelUsuario:"01/02/1995",
+            documentoDelUsuario:"38981817",
         },
 
         {
              imagenDelUusario: "/images/compradora2.jpg",
              nombreDeUsuario: "Maria Antonieta Gomez",
              emailDelUsuario: "magomez@gmail.com",
+             contraseñaDelUsuario:"bahs5162",
+             nacimientoDelUsuario:"03/09/1999",
+             documentoDelUsuario:"40826617",
         },
 
         {
             imagenDelUusario: "/images/comprador1.jpg",
             nombreDeUsuario: "Julian Alvarez",
             emailDelUsuario: "jalvarez@gmail.com",
+            contraseñaDelUsuario:"bhgy7887",
+            nacimientoDelUsuario:"24/06/1998",
+            documentoDelUsuario:"40009989",
         },
 
         {
             imagenDelUusario: "/images/compradora2.jpg",
             nombreDeUsuario: "Carolina Herrera",
             emailDelUsuario: "cherrera@gmail.com",
+            contraseñaDelUsuario:"tyrt5456",
+            nacimientoDelUsuario:"21/02/1996",
+            documentoDelUsuario:"39995543",
         },
 
         {
             imagenDelUusario: "/images/comprador1.jpg",
             nombreDeUsuario: "Jorge Nerosos",
             emailDelUsuario: "jnerosos@gmail.com",
+            contraseñaDelUsuario:"jhdc3826",
+            nacimientoDelUsuario:"12/12/1992",
+            documentoDelUsuario:"362739153",
         },
 
         {
             imagenDelUusario: "/images/compradora2.jpg",
             nombreDeUsuario: "Clementina Giaconda",
             emailDelUsuario: "cgiaconda@gmail.com",
+            contraseñaDelUsuario:"brycw8436",
+            nacimientoDelUsuario:"15/10/1994",
+            documentoDelUsuario:"394368720", 
+            
         },
 
 

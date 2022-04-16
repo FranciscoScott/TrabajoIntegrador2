@@ -6,6 +6,7 @@
 					<a href="/" class="main-header_home-link">
 						<img src="/stylesheets/images/logo-Hype.PNG">
 					</a>
+					
 				</div>
 	
 				<div class="col-7 col-md-6">
@@ -33,14 +34,14 @@
 				</ul>
 	
 				<ul class="right-navbar">
-					<li><a href="profile.ejs">
-							<%= users.nombreDelUsuario% %>  <i class="fas fa-user"></i>
+					<li><a href="/Profile/edit">
+							<%= users[0].nombreDelUsuario %>  <i class="fas fa-user"></i>
 						</a>
 					</li>
 					<li>
 						<form action="" method="post">
-							<button class="logout" type="submit">
-								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
+							<button class="user-estilo" type="submit">
+								Cerrar sesión <i class="user-estilo"></i>
 							</button>
 						</form>
 					</li> 

@@ -11,20 +11,19 @@
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img src="/dataBase/Data.js/zapatillas/users/imagenDelUusario" alt="foto de perfil" class="foto-perfil-usuario">
+				<img src="/images/comprador1.jpg" alt="foto de perfil" class="foto-perfil-usuario">
 			</div>
+			<br>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title"><%= users[i].nombreDelUsuario%>
-						<a href="/Profile">
-							<i class="fas fa-cog"></i>
-						</a>
-					</h1>
+					<h1 class="user-estilo"><%= users[0].nombreDeUsuario%></h1>
+			</div>
+				<div>
 					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
 				</div>
 				<div>
 					<div>
-						<h1 class="mail-del-user"><%= users[i].emailDelUsuario%></h1>
+						<h1 class="user-estilo"><%= users[0].emailDelUsuario%></h1>
 					</div>
 					<ul class="Registercolor">
 						<li>8 productos</li>
@@ -38,28 +37,7 @@
 	<!-- /Datos del usuario -->
 
 	<!-- Mis productos -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Mis productos</h2>
-			</div>
-			<!-- Show mis productos -->
-			<% for ( let i=0 ; i < shoes.length; i++) { %>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="/Product">
-							<figure class="product-box_image">
-								<img src= <%= shoes[i].imagen %> alt="cafetera moulinex">
-							</figure>
-							<article class="product-box_data">
-								<h2> <%= shoes[i].modelo %> </h2>
-								<p> <%= shoes[i].descripcion%> </p>
-								<p>Comentarios: 12</p>
-							</article>
-						</a>
-					</section>
-				</div>
-				<% } %>
+
 	<!-- /Mis productos -->
 
 

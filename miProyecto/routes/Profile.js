@@ -5,7 +5,7 @@ const ProfileControlers = require('../Controlers/ProfileControles')
 
 router.get('/', ProfileControlers.Profile)
 
-router.get('/edit', ProfileControlers.Profile)
+router.get('/edit', ProfileControlers.ProfileEdit)
 
 
 module.exports = router ;
