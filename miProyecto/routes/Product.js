@@ -9,8 +9,6 @@ router.get('/', ProductsControlers.detail)
 
 router.get('/add', ProductsControlers.add)
 
-router.get('/detalle', ProductsControlers.detail)
-
 router.get('/edit', ProductsControlers.edit)
 
 module.exports = router 

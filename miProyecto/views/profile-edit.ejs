@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+
+<%- include('./Partials/Head') %> 
+
+<body>
+	<!-- Header Logueado -->
+	<%- include('./Partials/headerLogueado') %> 
+	<!-- /Header Logueado -->
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Editar mi perfil</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			
+			
+					<!-- Show the "ultimos" products -->
+					<div class="Registercolor">
+
+						
+							<article>
+								<form action="" method="get">
+								
+									<label for="email">Ingrese su mail</label>
+									<input value= <%= users[0].emailDelUsuario %> class="form-input " type="email" name="usuario" id="usuario">
+				
+									<label for="usuario">Nombre de Usuario</label>
+									<input value= <%= users[0].nombreDeUsuario %> class="form-input " type="text" name="usuario" id="usuario">
+				
+									<label for="contraseña">Ingrese su contraseña</label>
+									<input value= <%= users[0].contraseñaDelUsuario %> class="form-input " type="password" name="contraseña" id="contraseña">
+				
+									<label for="fechaDeNacimiento">Fecha de Nacimiento</label>
+									<input value= <%= users[0].nacimientoDelUsuario %> class="form-input " type="text" name="fechaDeNacimiento" id="fechaDeNacimiento">
+				
+									<label for="nroDeDocumento">Numero de Documento</label>
+									<input value= <%= users[0].documentoDelUsuario %> class="form-input " type="number" name="nroDeDocumento" id="nroDeDocumento">
+				
+									<label for="fotoDePerfil">Foto de Perfil</label>
+									<img src="/images/comprador1.jpg" alt="foto de perfil" class="foto-perfil-usuario">
+				
+									<label for="enviar">Ingresar a mi usuario</label>
+									<input  class="form-input " type="submit" value="Enviar">
+				
+				
+								</form>
+							</article>
+							
+						
+					</div>
+							
+					</h2>
+			<!-- igual que el register, pero los campos con dato del usuario que tengo en la base -->
+			
+
+
+	<!-- footer -->
+	<%- include('./Partials/Footer') %> 
+	<!-- /footer -->
+
+</body>
+
+</html>
