@@ -13,10 +13,11 @@
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
 			<h2 class="products-title">Zapatillas Nike "Jordan Black"</h2> 
-			<p class="product-detail-description">
-				<a href="/Product/product-add">Agregar producto</a>
-			</p>
 		</div>
+		<a href="/Product/product-add">
+		<p class="buy-now-button">Agregar producto</p>
+		</a>
+	
 
 		<div class="product-detail">
 			<div class="row">
@@ -39,13 +40,17 @@
 						</article>
 						<% } %>
 				</div>
-
+				<form class="form" action="" method="get">
+					<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+					<a href="/register" type="submit" class="buy-now-button">AGREGAR COMENTARIO</a>
+				</form>
 					
 			
-					<form class="form" action="" method="POST">
+					<!-- TODAVIA NO
+						<form class="form" action="" method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-					</form>
+					</form> -->
 					<hr>
 				</div>
 			</div>

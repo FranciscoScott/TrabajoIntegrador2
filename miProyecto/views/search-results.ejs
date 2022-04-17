@@ -15,19 +15,18 @@
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-				<% for ( let i=0 ; i < 4; i++) { %>
+				<% for ( let i=0 ; i < 8; i++) { %>
 					<div class="col-12 col-sm-6 col-lg-3">
 						<section class="product-box">
-							<a href="/product/<%= shoes[i].modelo %> ">
 								<figure class="product-box_image">
 									<img src=<%= shoes[i].imagen %> alt="Modelo de zapatilla">
 								</figure>
 								<article class="product-box_data">
-									<h2> <%= shoes[i].color %> </h2>
+									<h2> <%= shoes[i].modelo %> </h2>
+									<p> <%= shoes[i].color%> </p>
 									<p> <%= shoes[i].descripcion%> </p>
 									<p>Comentarios: 12</p>
 								</article>
-							</a>
 						</section>
 					</div>
 					<% } %>

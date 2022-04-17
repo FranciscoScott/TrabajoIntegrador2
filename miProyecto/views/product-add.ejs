@@ -16,35 +16,16 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> 
-				
-
-				<form action="/" method="get" class="form-container">
-					
-				<ul>
-				<li>
-					<label for="imagen"><%= shoes.imagen %> </label>
-					<input type="file" name="imagen" id="imagen">
-				</li>
-				<li>
-					<label for="nombreDelProducto"> <%= shoes.modelo %> </label>
-					<input type="text" name="nombreDelProducto" id="nombreDelProducto">
-				</li>
-				<li>
-					<label for="descripcion"><%= shoes.descripcion %></label>
-					<input type="text" name="descripcion" id="descripcion">
-				</li>
-				<li>
-					<label for="fechaDeCarga">Fecha de Carga</label>
-					<input type="date" name="fechaDeCarga" id="fechaDeCarga">
-				</li>
-				<li>
-					<button type="submit">Agregar</button>
-				</li>
-					</ul>
+			<section class="form-register">
+				<form method="get" name="form-register">
+					<input class="form-input" type="text" name="Nombre del productos" placeholder="Nombre del producto">
+					<input class="form-input" type="text" name="Descripcion" placeholder="Descripcion">
+					<input class="form-input" type="date" name="Fecha" placeholder="Ingrese una fecha">
+					<input class="form-input" type="file" name="Imagen" placeholder="Ingrese imagen de producto"
+						value="Ingrese Imagen">
+					<a class="btn mt-3 ml-4" href="/">POSTEAR PRODUCTO</a>
 				</form>
-			//////////////// porque el uso de los tags para llamar a propiedades de variables del database?? LOS TAGS PERMITEN INCORPORAR FUNCIONALIDAD DE JS EN EL HTML//
-			</h2>
+			</section>
 
 
 	<!-- footer -->
