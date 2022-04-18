@@ -2,66 +2,67 @@
 <html lang="es">
 <!-- Include Head -->
 
-<%- include('./Partials/Head') %> 
+<%- include('./Partials/Head') %>
 
 <body>
 	<!-- Header -->
-	<%- include('./Partials/Header') %> 
+	<%- include('./Partials/Header') %>
 	<!-- /Header -->
-	
+
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title">Zapatillas Nike "Jordan Black"</h2> 
+			<h2 class="products-title">Zapatillas Nike "Jordan Black"</h2>
 		</div>
 		<a href="/product/Add">
-		<p class="buy-now-button">Agregar producto</p>
+			<p class="buy-now-button">Agregar producto</p>
 		</a>
-	
+
 
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="/images/jordanBlack.png" alt="" class="product-detail-img">
+	<img src="/images/jordanBlack.png" alt="" class="product-detail-img">
 					<p class="product-detail-description">
 						Zapatillas Nike "Jordan Black"</p>
 				</article>
-				
+
 				<div class="tamañoFotosPerfil">
 					<% for (let i = 0; i < comentarios.length; i++) { %>
-						<article>
-							<img class="fotoDeUsers" src= <%= comentarios[i].imagenDelPerfil %> alt="">
-							<div class="data">
-								<p class="user">
+					<article>
+						<img class="fotoDeUsers" src=<%= comentarios[i].imagenDelPerfil %> alt="">
+						<div class="data">
+							<p class="user">
 								<strong> <a href="/Profile"><%= comentarios[i].nombreDelUsuario%> </a> </strong>
 								<br>
 								<%= comentarios[i].textoDelComentario%> </p>
-							</div>
-						</article>
-						<% } %>
+						</div>
+					</article>
+					<% } %>
 				</div>
 				<form class="form" action="" method="get">
 					<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 					<a href="/register" type="submit" class="buy-now-button">AGREGAR COMENTARIO</a>
 				</form>
-					
-			
-					<!-- TODAVIA NO
+
+
+				<!-- TODAVIA NO
 						<form class="form" action="" method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form> -->
-					<hr>
-				</div>
+				<hr>
 			</div>
 		</div>
-	</div> 
+	</div>
+	</div>
 	<!-- /product detail -->
 
 	<!-- footer -->
-	<%- include('./Partials/Footer') %> 
+	<%- include('./Partials/Footer') %>
 	<!-- /footer -->
 
 
-</body>	
+</body>
+
 </html>

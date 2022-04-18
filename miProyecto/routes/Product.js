@@ -11,4 +11,5 @@ router.get('/add', ProductsControlers.add)
 
 router.get('/edit', ProductsControlers.edit)
 
-module.exports = router 
+
+module.exports = router
