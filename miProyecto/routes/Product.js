@@ -11,5 +11,7 @@ router.get('/add', ProductsControlers.add)
 
 router.get('/edit', ProductsControlers.edit)
 
+router.get('/:id?', ProductsControlers.detail);
+
 
 module.exports = router
