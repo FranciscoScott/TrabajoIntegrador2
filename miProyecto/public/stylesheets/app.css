@@ -74,6 +74,10 @@ hr {
   padding: 15px 0;
   background-color: black;
 }
+.header-logueado {
+  background-color: black;
+  padding: 15px 0;
+}
 
 .main-header_home-link,
 .main-header_credit-link {
@@ -184,19 +188,28 @@ hr {
 
 .products-title {
   font-size: 2.4em;
-  font-weight: 400;
-  color:yellow;
+  font-weight: 600;
+  color:rgb(0, 0, 0);
+  background-color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border: 10px;
+  width: 100%;
+  text-align: center;
+  border-color: #EAC926;
+  border-style: groove;
+
+  
 }
 .Registercolor{
   color: yellow;
   display: flex;  
 }
 .product-box {
-  background-color: #ffffff;
+  background-color: rgb(236, 236, 236);
   border-radius: 5px;
   overflow: hidden;
   transition: 300ms;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 .product-box a {
@@ -208,11 +221,12 @@ hr {
 }
 
 .product-box_data {
-  padding: 15px;
+  padding: 10px;
   position: relative;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .product-box_data h2 {
@@ -336,10 +350,13 @@ hr {
   background-color: #ffffff;
   border-radius: 8px;
   overflow: hidden;
+  border: 8px;
+  border-color: grey;
+  border-style: groove;
 }
 
 .product-detail-img {
-  width: 70%;
+  width: 65%;
   display: block;
   margin: auto;
 }
@@ -347,6 +364,11 @@ hr {
 .product-detail-info {
   border-right: 1px solid var(--light-gray);
   padding: 15px;
+  border: 5px;
+  border-color: #EAC926 ;
+  border-style: dotted;
+  margin: 25px;
+
   /* height: 100%; */
 }
 
@@ -356,9 +378,13 @@ hr {
 }
 
 .product-detail-description {
-  padding: 15px 15px 15px 40px;
-  font-size: 1.8em;
+  padding: 5px;
+  font-size: 2.8em;
   line-height: 1.5;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  background-color: grey;
+  text-align: center;
 }
 
 .product-detail-price {
@@ -366,9 +392,11 @@ hr {
   margin: 10px 0;
 }
 .product-detail .form{
-  padding: 0 15px;
+  padding: 20px;
   display: flex;
+  width: 100%;
   flex-direction: column;
+  background-color: gray;
 }
 .small {
   font-size: 1.8em;
@@ -458,7 +486,7 @@ hr {
 }
 
 /*====== Formularios ======*/
-.form-label {
+.label {
   display: inline-block;
   font-size: 1.6em;
   margin: 10px 0;
@@ -475,7 +503,24 @@ hr {
   border: solid 1px var(--gray);
   padding: 0 15px;
 }
-
+.form-register {
+  display: block;
+  width: 100%;
+  background-color: #666666;
+  padding: 15px;
+  border: 10px;
+  border-color: #000000;
+  border-style: double;
+  color: yellow;
+  font-size: 12px;
+}
+.foto-perfil-usuario {
+  width: 20%;
+  display: flex;
+}
+.foto-perfil-usuario {
+  display: flex;
+}
 .error{
   color: rgb(209, 0, 0);
   font-size: 1.4em;
@@ -517,6 +562,7 @@ textarea.form-input {
   .main-header_credit-link {
     margin-top: 0;
     text-align: right;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
   .banner {
@@ -535,32 +581,39 @@ textarea.form-input {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
   .left-navbar a,
   .right-navbar a {
     border-bottom: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
   .left-navbar a:hover,
   .right-navbar a:hover {
     color: var(--light-blue);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
   .left-navbar li {
     margin-right: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
   .right-navbar li {
     margin-left: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
   .main-footer {
     padding: 40px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
   .footer-data {
     width: 95%;
     margin: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 }
