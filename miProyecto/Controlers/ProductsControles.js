@@ -1,4 +1,4 @@
-const zapatillas = require("../dataBase/Data.js");
+const zapatillas = require("../db/Data.js");
 
 
 const controller = {
