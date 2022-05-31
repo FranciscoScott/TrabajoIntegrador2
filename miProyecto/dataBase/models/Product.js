@@ -1,6 +1,7 @@
 module.exports = function (sequelize, dataType) {
 
-let alias = "Shoe";
+//defino el alias. me permite idecntificar el modelo cuando lo usamos en el controlador
+let alias = "Product";
 
 //Describir la config de las columnas de la tabla
 let cols = {
@@ -46,7 +47,7 @@ let config = {
     underscored: 'false' //los campos no tienen guiones bajos
 }
 
-const Shoe = sequelize.define (alias, cols, config);
+const Product = sequelize.define (alias, cols, config);
 
 
 // faltan las relaciones
@@ -54,6 +55,6 @@ const Shoe = sequelize.define (alias, cols, config);
 
 
 
-return Shoe;
+return Product;
 
 }
