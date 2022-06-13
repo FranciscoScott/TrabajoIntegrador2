@@ -52,7 +52,19 @@ const Product = sequelize.define (alias, cols, config);
 
 // faltan las relaciones
 
+Product.asociate = function(models){
+    Product.belongsTo(models.User, 
+    {
+        as:'user',
+        foreignKey: 'userId'
+    });
 
+    Product.hasMany(models.Comment,
+        {
+            as:'commentario',
+            foreignKey:'comentarioId',
+        });
+}
 
 
 return Product;

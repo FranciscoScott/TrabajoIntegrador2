@@ -2,8 +2,8 @@
 
 const db = require ("../database/models/Product");
 
-const Product = db.products
-const op = db.sequelize.Op
+const Product = db.products ;
+//const op = db.sequelize.Op ;
 
 const productController = {
     showProduct: (req, res) => {
@@ -79,7 +79,7 @@ const productController = {
 };
 
 
-
+module.exports = controller;
 
 /* const controller = {
     detail: function (req, res) {
@@ -103,4 +103,3 @@ const productController = {
 } */
 
 //detalle y agregar producto
-module.exports = controller;

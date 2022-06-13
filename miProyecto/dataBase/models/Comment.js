@@ -43,6 +43,19 @@ module.exports = function (sequelize, dataType) {
     
     
     // faltan las relaciones
+    Comment.asociate = function(models){
+        Comment.belongsTo(models.Product, 
+        {
+            as:'product',
+            foreignKey: 'productId'
+        });
+    
+        Comment.belongsTo(models.User,
+            {
+                as:'user',
+                foreignKey:'userId',
+            });
+    }
     
     
     

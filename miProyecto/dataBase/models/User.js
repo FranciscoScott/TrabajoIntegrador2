@@ -48,7 +48,19 @@ module.exports = function (sequelize, dataType) {
     
     // faltan las relaciones
     
+    User.asociate = function(models){
+        User.hasMany(models.Product, 
+        {
+            as:'product',
+            foreignKey: 'productId'
+        });
     
+        User.hasMany(models.Comment,
+            {
+                as:'comment',
+                foreignKey:'commentId',
+            });
+    }
     
     
     return User;
