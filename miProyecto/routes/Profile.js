@@ -7,7 +7,7 @@ const ProfileControlers = require('../Controlers/ProfileControles')
 //Multer 
 let multer = require('multer');
 let path = require('path');
-const profileController = require('../Controlers/ProfileControles');
+const ProfileControlers = require('../Controlers/ProfileControles');
 const { profile } = require('console');
 
 let storage = multer.diskStorage({
@@ -22,24 +22,26 @@ let storage = multer.diskStorage({
 let upload = multer({storage : storage});
 
 // Login 
-router.get ('/login',profileController.login);
+router.get ('/login',ProfileControlers.login);
 
-router.post('/login',profileController.procesarLogin);
+router.post('/login',ProfileControlers.procesarLogin);
 
 //register
-router.get ('/register', profileController.register);
+router.get ('/register', ProfileControlers.register);
 
-router.post ('/register', upload.single('imgPerfil'), profileController.procesarRegister);
+router.post ('/register', upload.single('imgPerfil'), ProfileControlers.procesarRegister);
 
 //logout
-router.get('/logout',profileController.logout);
+router.get('/logout',ProfileControlers.logout);
 
-router.get('/:id', profileController.showProfile);
+router.get('/:id', ProfileControlers.showProfile);
 
-router.get('/edit',profileController.showProfileEdit)
+router.get('/edit',ProfileControlers.showProfileEdit)
 
-router.post('/edit', upload.single('imgPerfil'), profileController.updateProfile);
+router.post('/edit', upload.single('imgPerfil'), ProfileControlers.updateProfile);
 
+
+//Lo Viejo 
 router.get('/', ProfileControlers.Profile)
 
 router.get('/edit', ProfileControlers.ProfileEdit)
