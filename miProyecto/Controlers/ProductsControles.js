@@ -79,7 +79,7 @@ const productController = {
 };
 
 
-module.exports = controller;
+module.exports = productController;
 
 /* const controller = {
     detail: function (req, res) {
