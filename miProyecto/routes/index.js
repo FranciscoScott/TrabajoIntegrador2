@@ -1,20 +1,25 @@
 const express = require('express');
 const router = express.Router();
 const indexControlers = require('../Controlers/indexControlers');
-// const profileControlers = require('../Controlers/ProfileControles')
 
-// router.get('/',indexControlers.index)
+const multer = require('multer');
+const path = require('path')
 
-/* GET home page. */
-router.get('/', indexController.home);
-router.get('/search', indexController.search);
+let storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, path.join(__dirname, '../images')) //Usamos path.join para evitar problemas de rutas. __dirname da la posición exacta de la carpeta en la que está el archivo. Luego desde ahí nos movemos hasta la carpeta public.
+      //Las carpetas deben existir.
+    },
+    filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    }
+})
 
-//router.get('/login', profileControlers.login)
+let upload = multer({ storage: storage })
 
-//router.get('/register', profileControlers.register)
-
-//router.get('/search-results', indexControlers.searchresults)
-
+router.get('/', indexControlers.index);
+router.get('/searchResults', indexControlers.search);
+router.get('/login', indexControlers.login);
 
 module.exports = router ;
 

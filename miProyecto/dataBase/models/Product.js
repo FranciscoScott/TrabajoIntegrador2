@@ -1,4 +1,4 @@
-module.exports = function (sequelize, dataType) {
+module.exports = function (sequelize, dataTypes) {
 
 //defino el alias. me permite idecntificar el modelo cuando lo usamos en el controlador
 let alias = "Product";
@@ -8,35 +8,35 @@ let cols = {
     id: {
         autoIncrement: true,
         primaryKey: true, 
-        type: DataTypes.INTEGER
+        type: dataTypes.INTEGER
     },
     product: {
-        type: DataTypes.STRING
+        type: dataTypes.STRING
     },
     autor: {
-        type: DataTypes.STRING
+        type: dataTypes.STRING
     },
     descripcion: {
-        type: DataTypes.STRING
+        type: dataTypes.STRING
     },
     imagen: {
-        type: DataTypes.STRING
+        type: dataTypes.STRING
     },
     comentario: {
-        type: DataTypes.STRING
+        type: dataTypes.STRING
     },
     userId: {
         foreignKey: true,
-        type: DataTypes.INTEGER
+        type: dataTypes.INTEGER
     },
     createdAt: {
-        type: DataTypes.DATE
+        type: dataTypes.DATE
     },
     updatedAt: {
-        type: DataTypes.DATE
+        type: dataTypes.DATE
     },
     deletedAt: {
-        type: DataTypes.DATE
+        type: dataTypes.DATE
     }
     
 }

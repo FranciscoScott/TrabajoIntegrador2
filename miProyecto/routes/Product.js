@@ -20,12 +20,12 @@ let multer = requiere('multer')
 let path = requiere ('path')
 
 let storage = multer.diskstorage ({
-    destination: function(req, file, cd) {
-        cd (null, path.join (__dirname, '/images')) 
+    destination: function(req, file, cb) {
+        cb (null, path.join (__dirname, '/images')) 
     },
-    filename: function(req, file, cd) {
-        cd(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-    },
+    filename: function(req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    }
 })
 
 let upload = multer({storage : storage})

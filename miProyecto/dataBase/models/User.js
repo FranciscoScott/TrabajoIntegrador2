@@ -1,4 +1,4 @@
-module.exports = function (sequelize, dataType) {
+module.exports = function (sequelize, dataTypes) {
 
     //defino el alias. me permite idecntificar el modelo cuando lo usamos en el controlador
     let alias = "User";
@@ -8,31 +8,31 @@ module.exports = function (sequelize, dataType) {
         id: {
             autoIncrement: true,
             primaryKey: true, 
-            type: DataTypes.INTEGER
+            type: dataTypes.INTEGER
         },
         username: {
-            type: DataTypes.STRING
+            type: dataTypes.STRING
         },
         email: {
-            type: DataTypes.STRING
+            type: dataTypes.STRING
         },
         bday: {
-            type: DataTypes.DATE
+            type: dataTypes.DATE
         },
         profilePic: {
-            type: DataTypes.STRING
+            type: dataTypes.STRING
         },
         dni: {
-            type: DataTypes.INTEGER
+            type: dataTypes.INTEGER
         },
         createdAt: {
-            type: DataTypes.DATE
+            type: dataTypes.DATE
         },
         updatedAt: {
-            type: DataTypes.DATE
+            type: dataTypes.DATE
         },
         deletedAt: {
-            type: DataTypes.DATE
+            type: dataTypes.DATE
         }
         
     }

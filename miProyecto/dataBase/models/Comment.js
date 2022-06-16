@@ -1,4 +1,4 @@
-module.exports = function (sequelize, dataType) {
+module.exports = function (sequelize, dataTypes) {
 
     //defino el alias. me permite idecntificar el modelo cuando lo usamos en el controlador
     let alias = "Comment";
@@ -6,29 +6,29 @@ module.exports = function (sequelize, dataType) {
     //Describir la config de las columnas de la tabla
     let cols = {
         id: {
+            type: dataTypes.INTEGER,
             autoIncrement: true,
-            primaryKey: true, 
-            type: DataTypes.INTEGER
+            primaryKey: true
         },
         comentario: {
-            type: DataTypes.STRING
+            type: dataTypes.STRING
         },
         userId: {
             foreignKey: true,
-            type: DataTypes.INTEGER
+            type: dataTypes.INTEGER
         },
         productId: {
             foreignKey: true,
-            type: DataTypes.INTEGER
+            type: dataTypes.INTEGER
         },
         createdAt: {
-            type: DataTypes.DATE
+            type: dataTypes.DATE
         },
         updatedAt: {
-            type: DataTypes.DATE
+            type: dataTypes.DATE
         },
         deletedAt: {
-            type: DataTypes.DATE
+            type: dataTypes.DATE
         }
         
     }
