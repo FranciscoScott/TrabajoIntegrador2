@@ -201,7 +201,7 @@ module.exports = profileController;
         res.render('profile-edit' , {users: zapatillas.users , shoes: zapatillas.shoes});
     },
     // para mi en el 2do paraemtro de Profile va esto: "users: zapatillas.imagenDelUsuario , users: zapatillas.nombreDelUsuario , users: zapatillas.emailDelUsuario, por eso lo agregue, pero//
-     
+
     
 } */
 
