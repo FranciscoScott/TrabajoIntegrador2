@@ -3,7 +3,11 @@ const router = express.Router();
 const indexControlers = require('../Controlers/indexControlers');
 // const profileControlers = require('../Controlers/ProfileControles')
 
-router.get('/',indexControlers.index)
+// router.get('/',indexControlers.index)
+
+/* GET home page. */
+router.get('/', indexController.home);
+router.get('/search', indexController.search);
 
 //router.get('/login', profileControlers.login)
 
@@ -13,3 +17,4 @@ router.get('/',indexControlers.index)
 
 
 module.exports = router ;
+
