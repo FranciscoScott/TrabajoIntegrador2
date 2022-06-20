@@ -9,11 +9,12 @@ var app = express();
 
 //Rutas 
 const indexRouter = require('./routes/index');
-const ProductRouter = require('./routes/Product');
-const ProfileRouter = require('./routes/Profile');
+const productRouter = require('./routes/Product');
+const profileRouter = require('./routes/Profile');
 const db = require('./database/models');
 const session = require('express-session')
 const user = db.User
+const searchResultsRouter = require('./routes/index')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,10 +25,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/Product' ,ProductRouter )
-app.use('/Profile' , ProfileRouter)
 
 
 //Middelware session

@@ -16,6 +16,8 @@
 				<h2 class="products-title">Registrate</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
+
+			<!--
 			<div class="form-register">
 				<form action="" method="get">
 						
@@ -43,8 +45,24 @@
 
 				</form>
 			</div>
-					
-			</h2>
+			-->
+
+					<div class="form-register">
+					<form action="/profile/register" method="POST" enctype="multipart/form-data">
+					<input class="form-input" type="text" id="login" name="email" placeholder="mail">
+					<hr>
+					<input class="form-input" type="text" id="name" name="nombre" placeholder="name">
+					<hr>
+					<input  class="form-input" type="text" id="apellido" name="apellido" placeholder="apellido">
+					<hr>
+					<input class="form-input" type="password" id="password" name="contrasena" placeholder="password">
+					<hr>
+					<label for="profilePic"> Choose a profile pic:</label>
+					<input type="file" name="imgPerfil" placeholder= "Profile pic" value="">
+					<hr>
+					<input type="submit" class="form-input" value="Register">
+				</form>
+				</div>
 
 
 	<!-- footer -->

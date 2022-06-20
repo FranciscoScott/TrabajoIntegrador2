@@ -10,6 +10,7 @@ let cols = {
         primaryKey: true, 
         type: dataTypes.INTEGER
     },
+
     product: {
         type: dataTypes.STRING
     },
@@ -37,14 +38,21 @@ let cols = {
     },
     deletedAt: {
         type: dataTypes.DATE
+    },
+    modelo: {
+        type: dataTypes.STRING
     }
-    
 }
 
 let config = {
-    tableName: 'products', //el nombre de la tabla no coincide con el del modelo
-    timestamps: 'true', //columnas para timestamps
-    underscored: 'false' //los campos no tienen guiones bajos
+
+    timestamps: true,
+        createdAt: 'createdAt',
+        updatedAt: 'updatedAt',
+        deletedAt: 'deletedAt'
+  //  tableName: 'products', //el nombre de la tabla no coincide con el del modelo
+    // timestamps: 'true', //columnas para timestamps
+   //  underscored: 'false' //los campos no tienen guiones bajos
 }
 
 const Product = sequelize.define (alias, cols, config);

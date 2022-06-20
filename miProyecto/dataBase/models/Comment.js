@@ -34,9 +34,13 @@ module.exports = function (sequelize, dataTypes) {
     }
     
     let config = {
-        tableName: 'comentarios', //el nombre de la tabla no coincide con el del modelo
-        timestamps: 'true', //columnas para timestamps
-        underscored: 'false' //los campos no tienen guiones bajos
+        timestamps: true,
+        createdAt: 'createdAt',
+        updatedAt: 'updatedAt',
+        deletedAt: 'deletedAt'
+       // tableName: 'comentarios', //el nombre de la tabla no coincide con el del modelo
+       // timestamps: 'true', //columnas para timestamps
+       // underscored: 'false' //los campos no tienen guiones bajos
     }
     
     const Comment = sequelize.define (alias, cols, config);

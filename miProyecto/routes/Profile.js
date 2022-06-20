@@ -10,12 +10,12 @@ let path = require('path');
 
 
 let storage = multer.diskStorage({
-    destination: function(req,res, cb) {
-        cb(null,path.join(__dirname, '../images/users'))
+    destination: function(req, file, cb) {
+        cb(null,path.join(__dirname, '../public/images/users'))
         //Usamos path.join para evitar problemas de rutas. __dirname da la posición exacta de la carpeta en la que está el archivo. Luego desde ahí nos movemos hasta la carpeta public.
       //Las carpetas deben existir.
     },
-    filename : function (req,res, cb){
+    filename : function (req, file, cb){
         cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname))
     }
 })
@@ -44,7 +44,7 @@ router.get('/:id/edit', ProfileControlers.showProfileEdit);
 router.post('/:id/edit', upload.single('imgPerfil'), ProfileControlers.updateProfile);
 
 // folLow
-router.post('/follow/:id', ProfileControlers.follow)
+// router.post('/follow/:id', ProfileControlers.follow)
 
 
 module.exports = router ;

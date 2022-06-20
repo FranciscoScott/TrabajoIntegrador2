@@ -16,7 +16,7 @@ const productController = {
                 description: result.description,
             }
             console.log(shoe);
-            return res.render ('products', {products: shoes})
+            return res.render ('products', {products: shoe})
         }) .catch((err) => {console.log(err);});
     } , 
     showProductAdd: function(req, res) {
