@@ -5,21 +5,21 @@ const ProductsControlers = require('../Controlers/ProductsControles')
 
 
 
-router.get('/', ProductsControlers.detail)
+/*  router.get('/', ProductsControlers.detail)
 
 router.get('/add', ProductsControlers.add)
 
 router.get('/edit', ProductsControlers.edit)
 
-router.get('/:id?', ProductsControlers.detail);
+router.get('/:id?', ProductsControlers.detail); */
 
 
 // multer para subir fotos
 
-let multer = requiere('multer')
-let path = requiere ('path')
+let multer = require('multer')
+let path = require ('path')
 
-let storage = multer.diskstorage ({
+let storage = multer.diskStorage ({
     destination: function(req, file, cb) {
         cb (null, path.join (__dirname, '/images')) 
     },

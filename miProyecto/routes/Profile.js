@@ -7,8 +7,7 @@ const ProfileControlers = require('../Controlers/ProfileControles')
 //Multer 
 let multer = require('multer');
 let path = require('path');
-const ProfileControlers = require('../Controlers/ProfileControles');
-const { profile } = require('console');
+
 
 let storage = multer.diskStorage({
     destination: function(req,res, cb) {
@@ -23,30 +22,29 @@ let storage = multer.diskStorage({
 
 let upload = multer({storage : storage});
 
-// Login 
-router.get ('/login',ProfileControlers.login);
+/// Login
+router.get('/login', ProfileControlers.login)
 
-router.post('/login',ProfileControlers.procesarLogin);
+router.post('/login', ProfileControlers.procesarLogin)
 
-//register
-router.get ('/register', ProfileControlers.register);
+// Register
+router.get('/register', ProfileControlers.register)
 
-router.post ('/register', upload.single('imgPerfil'), ProfileControlers.procesarRegister);
+router.post('/register', upload.single('imgPerfil'), ProfileControlers.procesarRegister)
 
 //logout
-router.get('/logout',ProfileControlers.logout);
+router.get('/logout', ProfileControlers.logout)
 
 router.get('/:id', ProfileControlers.showProfile);
 
-router.get('/edit',ProfileControlers.showProfileEdit)
+//editProfile
 
-router.post('/edit', upload.single('imgPerfil'), ProfileControlers.updateProfile);
+router.get('/:id/edit', ProfileControlers.showProfileEdit);
 
+router.post('/:id/edit', upload.single('imgPerfil'), ProfileControlers.updateProfile);
 
-//Lo Viejo 
-router.get('/', ProfileControlers.Profile)
-
-router.get('/edit', ProfileControlers.ProfileEdit)
+// folLow
+router.post('/follow/:id', ProfileControlers.follow)
 
 
 module.exports = router ;

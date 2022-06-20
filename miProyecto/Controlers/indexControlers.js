@@ -1,6 +1,4 @@
-//requiero lo q exporta el modelo
-//const shoes = require('../db/data');
-const bcrypt = require('bcryptjs');
+
 const db = require('../database/models');
 const op = db.Sequelize.Op;
 const products = db.Product
