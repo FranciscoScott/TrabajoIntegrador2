@@ -18,28 +18,14 @@
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
 			<div  class="form-register">
-				<form action="" method="get">
-				<ul>
-					<li>
-					<label for="usuario">Ingrese su usuario</label>
-					<input class="form-input" type="email" name="usuario" id="usuario">
-					</li>
-
-					<li>
-						<label for="contraseña">Ingrese su contraseña</label>
-						<input class="form-input" type="password" name="contraseña" id="contraseña">
-					</li>
-
-					<li>
-						<label for="recordarme">Recordar mi usuario</label>
-						<input class="form-input" type="checkbox" name="recordarme" id="recordarme">
-					</li>
-					<li>
-						<label for="enviar">Iniciar sesión</label>
-						<input class="form-input" type="submit" value="Enviar">
-					</li>
-				</ul>	
-					
+				<form class="form-especial" action="/profile/login" method="POST">
+					<input type="text" id="login" class="fadeIn second" name="email" placeholder="email">
+					<input type="password" id="password" class="fadeIn third" name="contrasena" placeholder="password">
+					<hr>
+					<label class= "letraForm" for="checkbox"> Remind me </label>
+					<input type="checkbox" name="recordarme" value= "remindMe" >
+					<hr>
+					<input type="submit" class="fadeIn fourth" value="Log In">
 				</form>
 			</div>
 			</h2>

@@ -1,42 +1,39 @@
-module.exports = function (sequelize, dataTypes) {
+module.exports = (sequelize, dataTypes) => {
 
-    //defino el alias. me permite idecntificar el modelo cuando lo usamos en el controlador
-    let alias = "User";
-    
-    //Describir la config de las columnas de la tabla
+    let alias = 'User'
+
     let cols = {
         id: {
             autoIncrement: true,
-            primaryKey: true, 
-            type: dataTypes.INTEGER
-        },
-        username: {
-            type: dataTypes.STRING
+            primaryKey: true,
+            type: dataTypes.INTEGER,
         },
         email: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
         },
-        bday: {
-            type: dataTypes.DATE
+        nombre: {
+            type: dataTypes.STRING,
         },
-        profilePic: {
-            type: dataTypes.STRING
+        apellido: {
+            type: dataTypes.STRING,
         },
-        dni: {
-            type: dataTypes.INTEGER
+        contrasena: {
+            type: dataTypes.STRING,
+        },
+        foto: {
+            type: dataTypes.STRING,
         },
         createdAt: {
-            type: dataTypes.DATE
+            type: dataTypes.DATE,
         },
         updatedAt: {
-            type: dataTypes.DATE
+            type: dataTypes.DATE,
         },
         deletedAt: {
             type: dataTypes.DATE
         }
-        
     }
-    
+
     let config = {
 
         timestamps: true,
@@ -47,12 +44,8 @@ module.exports = function (sequelize, dataTypes) {
         // timestamps: 'true', //columnas para timestamps
         // underscored: 'false' //los campos no tienen guiones bajos
     }
-    
-    const User = sequelize.define (alias, cols, config);
-    
-    
-    // faltan las relaciones
-    
+    const User = sequelize.define(alias, cols, config);
+
     User.asociate = function(models){
         User.hasMany(models.Product, 
         {
@@ -66,9 +59,10 @@ module.exports = function (sequelize, dataTypes) {
                 foreignKey:'commentId',
             });
     }
-    
-    
+
+
     return User;
-    
-    }
-    
+
+}
+
+

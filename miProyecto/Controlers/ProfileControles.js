@@ -1,9 +1,9 @@
-const dataBase = require('../dataBase/models/User');
+const dataBase = require('../dataBase/models');
 const db = require('../db/Data');
+const user =  dataBase.User
 
-const user = db.User
+
 const bcrypt = require('bcryptjs');
-const User = require('../database/models/User');
 
 const profileController = {
     showProfile: function (req, res) {
@@ -84,7 +84,7 @@ const profileController = {
     },
     procesarRegister: function (req, res) {
         let info = req.body;
-        let profilePic = req.file.filename;
+        let imgPerfil = req.file.filename;
         console.log(info);
         let errors = {};
         let filtro = {
@@ -108,7 +108,7 @@ const profileController = {
             res.locals.errors = errors;
             return res.render('register')
         
-        } else if (profilePic.info == ""){
+        } else if (imgPerfil.info == ""){
             errors.message = 'An image is required'
             res.locals.errors = errors;
             return res.render('register')
@@ -119,13 +119,13 @@ const profileController = {
                 .then((result) => {
                     if (result == null) {
                         let info = req.body;
-                        let profilePic = req.file.filename;
+                        let imgPerfil = req.file.filename;
                         let usuario = {
                             email: info.email,
                             nombre: info.nombre,
                             apellido: info.apellido,
                             contrasena: bcrypt.hashSync(info.contrasena, 10),
-                            foto: profilePic,
+                            foto: imgPerfil,
                         };
                         user.create(usuario)
                             .then((result) => {
@@ -143,7 +143,7 @@ const profileController = {
                 }).catch(function (err) {
                     console.log(err);
                 })
-          }  
+        }  
 
 
 

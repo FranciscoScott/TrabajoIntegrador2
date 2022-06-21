@@ -6,19 +6,17 @@ module.exports = function (sequelize, dataTypes) {
     //Describir la config de las columnas de la tabla
     let cols = {
         id: {
-            type: dataTypes.INTEGER,
             autoIncrement: true,
-            primaryKey: true
+            primaryKey: true,
+            type: dataTypes.INTEGER,
         },
-        comentario: {
-            type: dataTypes.STRING
+        comentario : {
+            type: dataTypes.STRING,
         },
-        userId: {
-            foreignKey: true,
-            type: dataTypes.INTEGER
+        products_id: {
+            type: dataTypes.INTEGER,
         },
-        productId: {
-            foreignKey: true,
+        users_id: {
             type: dataTypes.INTEGER
         },
         createdAt: {
@@ -34,6 +32,7 @@ module.exports = function (sequelize, dataTypes) {
     }
     
     let config = {
+        
         timestamps: true,
         createdAt: 'createdAt',
         updatedAt: 'updatedAt',
@@ -47,18 +46,15 @@ module.exports = function (sequelize, dataTypes) {
     
     
     // faltan las relaciones
-    Comment.asociate = function(models){
-        Comment.belongsTo(models.Product, 
-        {
-            as:'product',
-            foreignKey: 'productId'
-        });
-    
-        Comment.belongsTo(models.User,
-            {
-                as:'user',
-                foreignKey:'userId',
-            });
+    Comment.associate = function (models) {
+        Comment.belongsTo(models.Product, {
+            as: 'product',
+            foreignKey : 'products_id'
+        })
+        Comment.belongsTo(models.User, {
+            as : 'user',
+            foreignKey : 'users_id'
+        })
     }
     
     

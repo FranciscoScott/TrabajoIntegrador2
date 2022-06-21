@@ -35,13 +35,15 @@
 	
 				<ul class="right-navbar">
 					<li><a href="/Profile/edit">
-							<%= users[0].nombreDelUsuario %>  <i class="fas fa-user"></i>
+						<%=locals.user.nombre%> <%=locals.user.apellido%>  <i class="fas fa-user"></i>
 						</a>
 					</li>
 					<li>
-						<button class="logout" type="submit">
-							<a href="/login" class="user-estilo"> Cerrar sesión </a>
-						</button>
+						<form action="/profile/logout" method="get">
+							<button class="logout type="submit">
+								Log out <i class="fas fa-sign-in-alt"></i>
+							</button>
+						</form>
 					</li> 
 					
 				</ul>

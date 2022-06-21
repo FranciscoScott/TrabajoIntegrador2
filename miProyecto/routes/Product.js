@@ -21,7 +21,7 @@ let path = require ('path')
 
 let storage = multer.diskStorage ({
     destination: function(req, file, cb) {
-        cb (null, path.join (__dirname, '/images')) 
+        cb (null, path.join (__dirname, '../public/images/products')) 
     },
     filename: function(req, file, cb) {
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
@@ -33,7 +33,6 @@ let upload = multer({storage : storage})
 // para mostrar una zapatilla
 
 router.get('/id/:id', ProductsControlers.showProduct)
-module.exports = router
 
 // para agregar una zapatilla
 
@@ -45,3 +44,5 @@ router.post ('/store', upload.single ('imgProduct'), ProductsControlers.store)
 
 router.get ('/edit/:id', ProductsControlers.showProductEdit)
 router.post ('/edited', upload.single ('imgProduct'), ProductsControlers.updateProduct )
+
+module.exports = router
