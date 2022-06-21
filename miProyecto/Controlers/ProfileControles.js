@@ -84,7 +84,7 @@ const profileController = {
     },
     procesarRegister: function (req, res) {
         let info = req.body;
-        let imgPerfil = req.file.filename;
+        let profilePic = req.file.filename;
         console.log(info);
         let errors = {};
         let filtro = {
@@ -108,7 +108,7 @@ const profileController = {
             res.locals.errors = errors;
             return res.render('register')
         
-        } else if (imgPerfil.info == ""){
+        } else if (profilePic.info == ""){
             errors.message = 'An image is required'
             res.locals.errors = errors;
             return res.render('register')
@@ -119,13 +119,13 @@ const profileController = {
                 .then((result) => {
                     if (result == null) {
                         let info = req.body;
-                        let imgPerfil = req.file.filename;
+                        let profilePic = req.file.filename;
                         let usuario = {
                             email: info.email,
                             nombre: info.nombre,
                             apellido: info.apellido,
                             contrasena: bcrypt.hashSync(info.contrasena, 10),
-                            foto: imgPerfil,
+                            foto: profilePic,
                         };
                         user.create(usuario)
                             .then((result) => {
@@ -159,12 +159,12 @@ const profileController = {
 
     updateProfile: (req, res) => {
         let info = req.body;
-        let imgPerfil = req.file.filename;
+        let profilePic = req.file.profilePic;
         let usuario = {
             email: info.email,
             nombre: info.nombre,
             apellido: info.apellido,
-            foto: imgPerfil,
+            foto: profilePic,
         }
         let filtro = {
             where: {

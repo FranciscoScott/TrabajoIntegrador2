@@ -6,14 +6,20 @@
 
 <body>
 	<!-- Header -->
-	<%- include('./Partials/Header') %>
+	<% if (locals.user != undefined) { %>
+		<%- include('./partials/headerLogueado')  %> 
+	<% } else{%>
+		<%- include('./partials/Header')  %> 
+	<% } %> 
 	<!-- /Header -->
 
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title">Zapatillas Nike "Jordan Black"</h2>
+			<h2 class="products-title"><%= producto.modelo %></h2>
+			<% if (locals.user && users.id == product.users.id) { %>
 		</div>
+
 		<a href="/product/Add">
 			<p class="buy-now-button">Agregar producto</p>
 		</a>
@@ -22,27 +28,27 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<h2 class="product-detail-description">
-						Zapatillas Nike "Jordan Black" </h2> 
-	<img src="/images/jordanBlack.png" alt="" class="product-detail-img">
+					<img src="/images/products/<%= producto.imagen%>" alt="" class="product-detail-img">
+					<p class="product-detail-description"> <%= producto.descripcion %> </p>
 				</article>
 
 				<div class="tamañoFotosPerfil">
-					<% for (let i = 0; i < comentarios.length; i++) { %>
-					<article>
-						<img class="fotoDeUsers" src=<%= comentarios[i].imagenDelPerfil %> alt="">
-						<div class="data">
-							<p class="user">
-								<strong> <a href="/Profile"><%= comentarios[i].nombreDelUsuario%> </a> </strong>
-								<br>
-								<%= comentarios[i].textoDelComentario%> </p>
-						</div>
-					</article>
-					<% } %>
-				</div>
-				<form class="form" action="" method="get">
-					<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-					<a href="/register" type="submit" class="buy-now-button">AGREGAR COMENTARIO</a>
+					<% for (let i = 0; i < producto.comentario.length; i++) { %>
+						<article>
+							<img src= "/images/users/<%=producto.comentario[i].users.imagen%>" alt="img perfil">
+							<div class="data">
+								<p class="user">
+								<strong> <a href="/profile/<%=producto.comentario[i].users.id%>"> <%=product.comentario[i].users.nombre%> <%=product.comment[i].users.apellido%> </a> </strong>
+									<%= producto.comentario[i].comentario %> 
+								</p>
+							</div>
+						</article>
+						<% } %>
+					</div>
+
+				<form class="form" action="/products/id/<%=producto.id%>" method="POST">
+					<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comentario"> 
+					<a type="submit" class="buy-now-button">AGREGAR COMENTARIO</a>
 				</form>
 
 
@@ -64,5 +70,7 @@
 
 
 </body>
+
+
 
 </html>

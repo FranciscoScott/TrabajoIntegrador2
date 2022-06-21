@@ -25,11 +25,11 @@
 				<section class="product-box">
 					<a href="/Product">
 						<figure class="product-box_image">
-							<img src= <%= product[i].imagen %> alt="Imagen de zapatilla">
+							<img src= <%= producto[i].imagen %> alt="Imagen de zapatilla">
 						</figure>
 						<article class="product-box_data">
-							<h2> <%= product[i].modelo %> </h2>
-							<p> <%= product[i].descripcion%> </p>
+							<h2> <%= producto[i].modelo %> </h2>
+							<p> <%= producto[i].descripcion%> </p>
 							<p>Comentarios: 12</p>
 						</article>
 					</a>
@@ -38,33 +38,6 @@
 			<% } %>
 			
 	<!-- /Novedades -->
-	<!-- Más comentados -->
-
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Más comentados</h2>
-			</div>
-			<!-- Show the "ultimos" products -->
-			<%for (let i=0 ; i< producto.length; i++) { %>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="/Product">
-							<figure class="product-box_image">
-								<img src=<%= product[i].imagen %> alt="cafetera moulinex">
-							</figure>
-							<article class="product-box_data">
-								<h2><%= product[i].modelo %> </h2>
-								<h2><%= product[i].marca %> </h2>
-								<p><%= product[i].descripcion%> </p>
-								<p>Comentarios: 12</p>
-							</article>
-						</a>
-					</section>
-				</div>
-				<%}%>
-			
-	<!-- /Más comentados -->
 
 
 	<!-- footer -->

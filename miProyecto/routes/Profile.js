@@ -11,7 +11,7 @@ let path = require('path');
 
 let storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(null,path.join(__dirname, '../public/images/users'))
+        cb(null,path.join(__dirname, '../public/images'))
         //Usamos path.join para evitar problemas de rutas. __dirname da la posición exacta de la carpeta en la que está el archivo. Luego desde ahí nos movemos hasta la carpeta public.
       //Las carpetas deben existir.
     },
@@ -30,7 +30,7 @@ router.post('/login', ProfileControlers.procesarLogin)
 // Register
 router.get('/register', ProfileControlers.register)
 
-router.post('/register', upload.single('imgPerfil'), ProfileControlers.procesarRegister)
+router.post('/register', upload.single('profilePic'), ProfileControlers.procesarRegister)
 
 //logout
 router.get('/logout', ProfileControlers.logout)
@@ -41,7 +41,7 @@ router.get('/:id', ProfileControlers.showProfile);
 
 router.get('/:id/edit', ProfileControlers.showProfileEdit);
 
-router.post('/:id/edit', upload.single('imgPerfil'), ProfileControlers.updateProfile);
+router.post('/:id/edit', upload.single('profilePic'), ProfileControlers.updateProfile);
 
 // folLow
 // router.post('/follow/:id', ProfileControlers.follow)
