@@ -23,9 +23,6 @@ let cols = {
     imagen: {
         type: dataTypes.STRING
     },
-    comentario: {
-        type: dataTypes.STRING
-    },
     userId: {
         foreignKey: true,
         type: dataTypes.INTEGER

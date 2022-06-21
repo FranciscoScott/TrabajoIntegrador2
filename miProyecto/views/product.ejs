@@ -16,40 +16,30 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= producto.modelo %></h2>
-			<% if (locals.user && users.id == product.users.id) { %>
+			<h2 class="products-title"><%= product.modelo %></h2>
+			<% if (locals.user && user.id == product.userId) { %>
 		</div>
 
 		<a href="/product/Add">
 			<p class="buy-now-button">Agregar producto</p>
 		</a>
-
+		<% } %>
 
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="/images/products/<%= producto.imagen%>" alt="" class="product-detail-img">
-					<p class="product-detail-description"> <%= producto.descripcion %> </p>
+					<img src="/images/products/<%= product.imagen%>" alt="" class="product-detail-img">
+					<p class="product-detail-description"> <%= product.descripcion %> </p>
 				</article>
 
-				<div class="tamañoFotosPerfil">
-					<% for (let i = 0; i < producto.comentario.length; i++) { %>
-						<article>
-							<img src= "/images/users/<%=producto.comentario[i].users.imagen%>" alt="img perfil">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="/profile/<%=producto.comentario[i].users.id%>"> <%=product.comentario[i].users.nombre%> <%=product.comment[i].users.apellido%> </a> </strong>
-									<%= producto.comentario[i].comentario %> 
-								</p>
-							</div>
-						</article>
-						<% } %>
-					</div>
+				
 
-				<form class="form" action="/products/id/<%=producto.id%>" method="POST">
+				<form class="form" action="/products/id/<%=product.id%>" method="POST">
 					<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comentario"> 
 					<a type="submit" class="buy-now-button">AGREGAR COMENTARIO</a>
 				</form>
+
+				
 
 
 				<!-- TODAVIA NO

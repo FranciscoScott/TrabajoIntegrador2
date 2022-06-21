@@ -67,7 +67,7 @@ app.use(function(req, res, next) {
 //CUANDO EL USUARIO REQUIERE / ALGO... 
 app.use('/', indexRouter);
 app.use('/search-results', searchResultsRouter);
-app.use('/products', productRouter);
+app.use('/product', productRouter);
 app.use('/profile', profileRouter);
 
 

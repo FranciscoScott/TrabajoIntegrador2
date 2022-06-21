@@ -32,7 +32,7 @@ let upload = multer({storage : storage})
 
 // para mostrar una zapatilla
 
-router.get('/id/:id', ProductsControlers.showProduct)
+
 
 // para agregar una zapatilla
 
@@ -42,7 +42,9 @@ router.post ('/store', upload.single ('imgProduct'), ProductsControlers.store)
 
 //rutas para editar una zapatilla
 
-router.get ('/edit/:id', ProductsControlers.showProductEdit)
+router.get ('/:id/edit', ProductsControlers.showProductEdit)
 router.post ('/edited', upload.single ('imgProduct'), ProductsControlers.updateProduct )
+
+router.get('/:id', ProductsControlers.showProduct)
 
 module.exports = router

@@ -10,23 +10,24 @@ const productController = {
     showProduct: (req, res) => {
         let id = req.params.id;
         
-        let filtro = {
+        /*let filtro = {
             include : {
                 all: true,
                 nested: true
             },
             order : [["comment", "createdAt" , "DESC"]]
-        }
+        }*/
 
-        product.findByPk(id, filtro)
+        Product.findByPk(id //,filtro
+        )
             .then((result) => {
-                return res.render('products', { product: result.dataValues })
+                return res.render('product',  { product: result.dataValues })
             }).catch((err) => {
                 console.log(err);
             });
     } , 
     showProductAdd: function (req, res) {
-        return res.render('product-add')
+        return res.render('productAdd')
     },
 
     store: (req, res) => {
