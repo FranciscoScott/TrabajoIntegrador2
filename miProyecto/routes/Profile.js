@@ -32,10 +32,13 @@ router.get('/register', ProfileControlers.register)
 
 router.post('/register', upload.single('imgPerfil'), ProfileControlers.procesarRegister)
 
+// View
+
+router.get('/:id', ProfileControlers.showProfile);
+
 //logout
 router.get('/logout', ProfileControlers.logout)
 
-router.get('/:id', ProfileControlers.showProfile);
 
 //editProfile
 
