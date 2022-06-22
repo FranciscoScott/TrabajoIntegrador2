@@ -33,9 +33,6 @@ router.get('/register', ProfileControlers.register)
 router.post('/register', upload.single('imgPerfil'), ProfileControlers.procesarRegister)
 
 // View
-
-
-
 //logout
 router.get('/logout', ProfileControlers.logout)
 
