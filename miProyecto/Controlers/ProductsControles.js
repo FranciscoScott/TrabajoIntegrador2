@@ -32,23 +32,25 @@ const productController = {
 
     store: (req, res) => {
         let info = req.body;
-        let imgProduct = req.file.filename;
         let shoe = {
-        photo: imgProduct,
-        model: info.modelo,
-        description: info.descripcion,
-        users_id: req.session.userId
+        modelo: info.modelo,
+        descripcion: info.descripcion,
+        imagen: req.file.filename,
+        marca: info.product
         };
+        
+        
 
-
-        Product.create(info)
+        Product.create(shoe)
             .then(() => {
                 return res.redirect('/')
             }).catch((err) => {
                 return res.send('Hay un error' + err)
-            });
+            }); 
+            
 
     },
+    
     showProductEdit: (req, res) => {
         let id = req.params.id;
         Product.findByPk(id).then((product) => {
@@ -67,7 +69,7 @@ const productController = {
     updateProduct: (req, res) => {
 
 
-        if(req.session.user.id == req.body.users_id) {
+        if(req.session.userId == req.body.userId) {
             let info = req.body;
             let imgProduct = req.file.filename;
     
