@@ -10,8 +10,7 @@ const profileController = {
         let id = req.params.id;
         user.findByPk(id, {all: true, nested: true})
             .then((result) => {
-                console.log(result.seguidores);
-                return res.render('profile', { profile: result.dataValues })
+                return res.render('profile', { profile: result.dataValues})
             }).catch((err) => {
                 console.log(err);
             });
@@ -148,8 +147,6 @@ const profileController = {
 
 
     },
-
-
     
     logout: (req, res) => {
         req.session.destroy();
