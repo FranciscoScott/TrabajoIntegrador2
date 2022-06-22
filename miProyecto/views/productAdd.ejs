@@ -17,13 +17,12 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<section class="form-register">
-				<form method="get" name="form-register">
-					<input class="form-input" type="text" name="Nombre del productos" placeholder="Nombre del producto">
-					<input class="form-input" type="text" name="Descripcion" placeholder="Descripcion">
-					<input class="form-input" type="date" name="Fecha" placeholder="Ingrese una fecha">
-					<input class="form-input" type="file" name="Imagen" placeholder="Ingrese imagen de producto"
+				<form method="post" name="form-register" enctype="multipart/form-data">
+					<input class="form-input" type="text" name="modelo" placeholder="Nombre del producto">
+					<input class="form-input" type="text" name="descripcion" placeholder="Descripcion">
+					<input class="form-input" type="file" name="imagen" placeholder="Ingrese imagen de producto"
 						value="Ingrese Imagen">
-					<a class="btn mt-3 ml-4" href="/">POSTEAR PRODUCTO</a>
+					<button type="submit" class="btn btn primary"> Agregar producto </button>
 				</form>
 			</section>
 

@@ -25,6 +25,15 @@
 		</a>
 		<% } %>
 
+			<!-- product edit -->
+		<% if (locals.user && user.id == product.userId) { %>
+		</div>
+
+		<a href="/product/<%product.id%>/edit">
+			<p class="buy-now-button">Editar producto</p>
+		</a>
+		<% } %>
+
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
@@ -39,7 +48,7 @@
 					<a type="submit" class="buy-now-button">AGREGAR COMENTARIO</a>
 				</form>
 
-				
+
 
 
 				<!-- TODAVIA NO

@@ -32,17 +32,17 @@ const productController = {
 
     store: (req, res) => {
         let info = req.body;
-        let imgProduct = req.file.filename;
-        let shoe = {
-            photo: imgProduct,
-            model: info.model,
-            description: info.description,
-            users_id: req.session.user.id
-        };
+        //let imgProduct = req.file.filename;
+        // let shoe = {
+        //     photo: imgProduct,
+        //     model: info.modelo,
+        //     description: info.descripcion,
+        //     users_id: req.session.userId
+        // };
 
 
-        product.create(shoe)
-            .then((result) => {
+        Product.create(info)
+            .then(() => {
                 return res.redirect('/')
             }).catch((err) => {
                 return res.send('Hay un error' + err)
@@ -51,15 +51,15 @@ const productController = {
     },
     showProductEdit: (req, res) => {
         let id = req.params.id;
-        product.findByPk(id).then((result) => {
-            let shoe = {
-                id: result.id,
-                photo: result.photo,
-                model: result.model,
-                description: result.description,
-                users_id: req.params.id
-            }
-            return res.render('product-edit', { product: shoe })
+        Product.findByPk(id).then((product) => {
+        //     let shoe = {
+        //         id: result.id,
+        //         photo: result.imagen,
+        //         model: result.modelo,
+        //         description: result.descripcion,
+        //         users_id: req.params.id
+        //     }
+            return res.render('productEdit', { product })
         }).catch((err) => {
             console.log(err);
         });
