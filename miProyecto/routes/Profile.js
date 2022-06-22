@@ -7,6 +7,7 @@ const ProfileControlers = require('../Controlers/ProfileControles')
 //Multer 
 let multer = require('multer');
 let path = require('path');
+const profileController = require('../Controlers/ProfileControles');
 
 
 let storage = multer.diskStorage({
@@ -33,10 +34,12 @@ router.get('/register', ProfileControlers.register)
 router.post('/register', upload.single('imgPerfil'), ProfileControlers.procesarRegister)
 
 // View
+
 //logout
 router.get('/logout', ProfileControlers.logout)
 
 router.get('/:id', ProfileControlers.showProfile);
+//router.get('/Profile', ProfileControlers.showProfile);
 
 
 //editProfile
