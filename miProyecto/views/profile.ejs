@@ -11,69 +11,67 @@
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img src="../public/images/users/<%= profile.foto %>" alt="foto de perfil" class="foto-perfil"> 
+				<img src="/images/users/<%=profile.foto %>" alt="foto de perfil" class="foto-perfil"> 
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"><%=profile.nombre%> <%=profile.apellido%>   
 					
-					<% if (locals.user == undefined) { %>
+						<% if (locals.user == undefined) { %>
 			
 					
 					
-					<% }  else if(locals.user.id != profile.id){ %>
-						<form  action="/profile/seguir/<%=profile.id%> " method="POST">
-							<button class="btn mt-3 ml-4" type="submit" name="seguir">Seguir</button>
-						</form>
-					<% } else { %>
-					<a href="/profile/<%= locals.user.id %>/edit">
-						<i class="fas fa-cog"></i>
-					</a>
-					
-					<% } %> </h1>
-
+							<% }  else if(locals.user.id != profile.id){ %>
+								<form  action="/profile/seguir/<%=profile.id%> " method="POST">
+									<button class="btn mt-3 ml-4" type="submit" name="seguir"> Seguir </button>
+								</form>
+							<% } else { %>
+							<a href="/profile/<%= locals.user.id %>/edit">
+								<i class="fas fa-cog"></i>
+							</a>
+							
+							<% } %> </h1>
+		
+						</div>
+						<div>
+							<ul class="">
+								<li class="listItems"> Products created: <%= profile.productId.length %> </li>
+								<li class="listItems"> Followers:  </li>
+							</ul>
+						</div>
+					</div>
 				</div>
-				<!-- <div>
-					<ul class="">
-						<li class="listItems"> Products created: aca va algo </li>
-						<li class="listItems"> Followers: aca va algo </li>
-					</ul>
-				</div> -->
-			</div>
-		</div>
-	</section>
-	<!-- /Datos del usuario -->
-
-	<!-- /Mis productos -->
-	<!-- <div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">My shoes</h2>
+			</section>
+			<!-- /Datos del usuario -->
+		
+			<!-- /Mis productos -->
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">My products</h2>
+					</div>
+					<!-- Show the "ultimos" products -->
+					<% for (let i = 0; i < profile.productId.length; i++) { %>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<section class="product-box">
+							<a href="/images/products/<%= profile.product[i].id %>">
+								<figure class="product-box_image">
+									<img src="/images/products/<%= profile.product[i].photo %>"  alt="shoes">
+								</figure>
+								<article class="product-box_data">
+									<h2> <%= profile.product[i].model  %>  </h2>
+									<p> <%= profile.product[i].description  %> </p>
+									<p>Creator: <%= profile.nombre %> <%= profile.apellido %> </p> 
+								</article>
+							</a>
+						</section>
+					</div>
+					<% } %>
+				</div>
 			</div>
 		
-			
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/products/id/">
-						<figure class="product-box_image">
-							<img src="/images/products/  alt="shoes">
-						</figure>
-						<article class="product-box_data">
-							<h2>  </h2>
-							<p>  </p>
-							<p>Creator: </p> 
-						</article>
-					</a>
-				</section>
-			</div>
-			
-		</div>
-	</div> -->
-
-
-	<!-- footer -->
-	<%- include('./Partials/Footer') %> 
-	<!-- /footer -->
-
-</body>	
-</html>
+			<!-- footer -->
+			<%- include('./partials/footer')  %> 
+			<!-- /footer -->
+		</body>	
+		</html>

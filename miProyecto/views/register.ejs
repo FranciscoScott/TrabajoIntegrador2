@@ -15,40 +15,14 @@
 			<div class="col-12">
 				<h2 class="products-title">Registrate</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
-
-			<!--
-			<div class="form-register">
-				<form action="" method="get">
-						
-					<label for="email">Ingrese su email</label>
-					<input class="form-input " type="email" name="usuario" id="usuario">
-
-					<label for="usuario">Ingrese su usuario</label>
-					<input class="form-input " type="text" name="usuario" id="usuario">
-
-					<label for="contraseña">Ingrese su contraseña</label>
-					<input class="form-input " type="password" name="contraseña" id="contraseña">
-
-					<label for="fechaDeNacimiento">Ingrese su fecha de naciemiento</label>
-					<input class="form-input " type="date" name="fechaDeNacimiento" id="fechaDeNacimiento">
-
-					<label for="nroDeDocumento">Ingrese su numero de documento</label>
-					<input class="form-input " type="number" name="nroDeDocumento" id="nroDeDocumento">
-
-					<label for="fotoDePerfil">Ingrese su foto de foto de perfil</label>
-					<input class="form-input " type="file" name="fotoDePerfil" id="fotoDePerfil">
-
-					<label for="enviar">Enviar formulario</label>
-					<input class="form-input " type="submit" value="Enviar">
-
-
-				</form>
+			
+			<div><% if (locals.errors) { %>
+				<p style="color : rgb(0, 0, 0)"> <%=locals.errors.message  %> </p>
+			<% } %>
 			</div>
-			-->
 
-					<div class="form-register">
-					<form action="/profile/register" method="POST" enctype="multipart/form-data">
+			<div class="form-register">
+				<form action="/profile/register" method="POST" enctype="multipart/form-data">
 					<input class="form-input" type="text" id="login" name="email" placeholder="mail">
 					<hr>
 					<input class="form-input" type="text" id="name" name="nombre" placeholder="name">
@@ -62,7 +36,7 @@
 					<hr>
 					<input type="submit" class="form-input" value="Register">
 				</form>
-				</div>
+			</div>
 
 
 	<!-- footer -->

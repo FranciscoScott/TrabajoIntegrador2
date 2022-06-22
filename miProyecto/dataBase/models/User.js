@@ -32,6 +32,7 @@ module.exports = (sequelize, dataTypes) => {
         deletedAt: {
             type: dataTypes.DATE
         }
+
     }
 
     let config = {
