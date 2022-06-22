@@ -16,13 +16,13 @@ const indexController = {
     login: function (req, res) {
         return res.render('login', {title: 'login'});
     },
-    /* comentarios: function(req, res){
+    comentarios: function(req, res){
         let comentario = {
         comentario : req.body.comentario,
         productId : req.params.id,
-        usuarioId : req.session.user.id
+        usuarioId : req.session.userId
         }
-    },*/
+    },
 
       // navegador
     searchResults: function (req,res){

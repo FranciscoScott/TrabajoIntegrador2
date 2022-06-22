@@ -10,13 +10,13 @@ const productController = {
     showProduct: (req, res) => {
         let id = req.params.id;
         
-        /*let filtro = {
+        let filtro = {
             include : {
                 all: true,
                 nested: true
             },
             order : [["comment", "createdAt" , "DESC"]]
-        }*/
+        }
 
         Product.findByPk(id //,filtro
         )
@@ -32,13 +32,13 @@ const productController = {
 
     store: (req, res) => {
         let info = req.body;
-        //let imgProduct = req.file.filename;
-        // let shoe = {
-        //     photo: imgProduct,
-        //     model: info.modelo,
-        //     description: info.descripcion,
-        //     users_id: req.session.userId
-        // };
+        let imgProduct = req.file.filename;
+        let shoe = {
+        photo: imgProduct,
+        model: info.modelo,
+        description: info.descripcion,
+        users_id: req.session.userId
+        };
 
 
         Product.create(info)
@@ -52,13 +52,13 @@ const productController = {
     showProductEdit: (req, res) => {
         let id = req.params.id;
         Product.findByPk(id).then((product) => {
-        //     let shoe = {
-        //         id: result.id,
-        //         photo: result.imagen,
-        //         model: result.modelo,
-        //         description: result.descripcion,
-        //         users_id: req.params.id
-        //     }
+        let shoe = {
+            id: result.id,
+                photo: result.imagen,
+                model: result.modelo,
+                description: result.descripcion,
+                users_id: req.params.id
+            }
             return res.render('productEdit', { product })
         }).catch((err) => {
             console.log(err);
@@ -73,8 +73,8 @@ const productController = {
     
             let shoe = {
                 photo: imgProduct,
-                model: info.model,
-                description: info.description,
+                model: info.modelo,
+                description: info.descripcion,
             }
     
             let filtro = {
