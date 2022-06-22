@@ -43,13 +43,13 @@ let cols = {
 
 let config = {
 
-    timestamps: true,
-        createdAt: 'createdAt',
-        updatedAt: 'updatedAt',
-        deletedAt: 'deletedAt'
-  //  tableName: 'products', //el nombre de la tabla no coincide con el del modelo
-    // timestamps: 'true', //columnas para timestamps
-   //  underscored: 'false' //los campos no tienen guiones bajos
+     // tableName: 'comments', //el nombre de la tabla no coincide con el del modelo
+     timestamps: 'true', //columnas para timestamps
+     // underscored: 'false', //los campos no tienen guiones bajos
+
+createdAt: 'createdAt',
+updatedAt: 'updatedAt',
+deletedAt: 'deletedAt'
 }
 
 const Product = sequelize.define (alias, cols, config);

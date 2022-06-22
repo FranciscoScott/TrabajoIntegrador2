@@ -16,7 +16,7 @@ module.exports = function (sequelize, dataTypes) {
         products_id: {
             type: dataTypes.INTEGER,
         },
-        users_id: {
+        userId: {
             type: dataTypes.INTEGER
         },
         createdAt: {
@@ -32,16 +32,19 @@ module.exports = function (sequelize, dataTypes) {
     }
     
     let config = {
-        
-        timestamps: true,
-        createdAt: 'createdAt',
-        updatedAt: 'updatedAt',
-        deletedAt: 'deletedAt'
-       // tableName: 'comentarios', //el nombre de la tabla no coincide con el del modelo
-       // timestamps: 'true', //columnas para timestamps
-       // underscored: 'false' //los campos no tienen guiones bajos
-    }
+
     
+        
+      // tableName: 'comments', //el nombre de la tabla no coincide con el del modelo
+       timestamps: 'true', //columnas para timestamps
+      // underscored: 'false', //los campos no tienen guiones bajos
+
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    deletedAt: 'deletedAt'
+    }
+
+
     const Comment = sequelize.define (alias, cols, config);
     
     

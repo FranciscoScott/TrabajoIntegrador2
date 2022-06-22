@@ -14,7 +14,7 @@ const profileRouter = require('./routes/Profile');
 const db = require('./database/models');
 const session = require('express-session')
 const user = db.User
-const searchResultsRouter = require('./routes/index')
+const searchResultsRouter = require('./routes/searchResults')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -66,7 +66,7 @@ app.use(function(req, res, next) {
 
 //CUANDO EL USUARIO REQUIERE / ALGO... 
 app.use('/', indexRouter);
-app.use('/search-results', searchResultsRouter);
+app.use('/searchResults', searchResultsRouter);
 app.use('/product', productRouter);
 app.use('/profile', profileRouter);
 

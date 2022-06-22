@@ -36,7 +36,7 @@ const productController = {
         modelo: info.modelo,
         descripcion: info.descripcion,
         imagen: req.file.filename,
-        marca: info.product
+        product: info.product
         };
         
         
