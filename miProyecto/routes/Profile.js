@@ -34,10 +34,12 @@ router.post('/register', upload.single('imgPerfil'), ProfileControlers.procesarR
 
 // View
 
-router.get('/:id', ProfileControlers.showProfile);
+
 
 //logout
 router.get('/logout', ProfileControlers.logout)
+
+router.get('/:id', ProfileControlers.showProfile);
 
 
 //editProfile
@@ -47,7 +49,7 @@ router.get('/:id/edit', ProfileControlers.showProfileEdit);
 router.post('/:id/edit', upload.single('imgPerfil'), ProfileControlers.updateProfile);
 
 // folLow
-// router.post('/follow/:id', ProfileControlers.follow)
+
 
 
 module.exports = router ;
