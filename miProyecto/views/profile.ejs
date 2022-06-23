@@ -34,10 +34,6 @@
 		
 						</div>
 						<div>
-							<ul class="">
-								<li class="listItems"> Products created: <%= profile.productId.length %> </li>
-								<li class="listItems"> Followers:  </li>
-							</ul>
 						</div>
 					</div>
 				</div>
@@ -51,24 +47,7 @@
 						<h2 class="products-title">My products</h2>
 					</div>
 					<!-- Show the "ultimos" products -->
-					<% for (let i = 0; i < profile.productId.length; i++) { %>
-					<div class="col-12 col-sm-6 col-lg-3">
-						<section class="product-box">
-							<a href="/images/products/<%= profile.product[i].id %>">
-								<figure class="product-box_image">
-									<img src="/images/products/<%= profile.product[i].photo %>"  alt="shoes">
-								</figure>
-								<article class="product-box_data">
-									<h2> <%= profile.product[i].model  %>  </h2>
-									<p> <%= profile.product[i].description  %> </p>
-									<p>Creator: <%= profile.nombre %> <%= profile.apellido %> </p> 
-								</article>
-							</a>
-						</section>
-					</div>
-					<% } %>
-				</div>
-			</div>
+			
 		
 			<!-- footer -->
 			<%- include('./partials/footer')  %> 

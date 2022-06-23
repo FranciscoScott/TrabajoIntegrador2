@@ -13,7 +13,7 @@ module.exports = function (sequelize, dataTypes) {
         comentario : {
             type: dataTypes.STRING,
         },
-        products_id: {
+        productsId: {
             type: dataTypes.INTEGER,
         },
         userId: {
@@ -56,7 +56,7 @@ module.exports = function (sequelize, dataTypes) {
         })
         Comment.belongsTo(models.User, {
             as : 'user',
-            foreignKey : 'usersId'
+            foreignKey : 'userId'
         })
     }
     
