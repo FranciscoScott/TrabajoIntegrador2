@@ -17,9 +17,9 @@
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= product.modelo %></h2>
-			<% if (locals.user && user.id == product.userId) { %>
+			
 		</div>
-
+		<% if (locals.user && user.id == product.userId) { %>
 		<a href="/product/Add">
 			<p class="buy-now-button">Agregar producto</p>
 		</a>
@@ -27,25 +27,42 @@
 
 			<!-- product edit -->
 		<% if (locals.user && user.id == product.userId) { %>
-		</div>
+		
 
 		<a href="/product/<%product.id%>/edit">
 			<p class="buy-now-button">Editar producto</p>
 		</a>
+	</div>
 		<% } %>
 
 		<div class="product-detail">
 			<div class="row">
-				<article class="col-12 col-lg-8 product-detail-info">
+				<article class="col-12 col-lg-8 product-detail-info" style="max-width: 35%">
+
 					<img src="/images/products/<%= product.imagen%>" alt="" class="product-detail-img">
-					<p class="product-detail-description"> <%= product.descripcion %> </p>
+					<p class="product-detail-description"> <%= product.modelo %> </p>
+
+
 				</article>
 
+				<section class="comments">
+					<% for (let i = 0; i < product.comment.length; i++) { %>
+						<article>
+							<a href="/profile/<%=product.comment[i].user.id%>"> <img src= "/images/users/<%=product.comment[i].user.foto%>" alt="img perfil"> </a>
+							<div class="data">
+								<p class="user">
+								<strong> <a href="/profile/<%=product.comment[i].user.id%>"> <%=product.comment[i].user.nombre%> <%=product.comment[i].user.apellido%> </a> </strong>
+									<%= product.comment[i].comentario %> 
+								</p>
+							</div>
+						</article>
+						<% } %>
+				</section>
 				
 
-				<form class="form" action="/products/id/<%=product.id%>" method="POST">
+				<form class="form" action="/product/<%=product.id%>" method="POST">
 					<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comentario"> 
-					<a type="submit" class="buy-now-button">AGREGAR COMENTARIO</a>
+					<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 				</form>
 
 

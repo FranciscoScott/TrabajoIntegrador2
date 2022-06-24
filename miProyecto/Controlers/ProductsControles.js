@@ -3,7 +3,7 @@
 const db = require ("../database/models");
 
 const Product = db.Product ; //el nombre del modelo (siempre en singular y en mayus)
-
+const comment = db.Comment ;
 //const op = db.sequelize.Op ;
 
 const productController = {
@@ -15,12 +15,13 @@ const productController = {
                 all: true,
                 nested: true
             },
-            order : [["comment", "createdAt" , "DESC"]]
+
         }
 
-        Product.findByPk(id //,filtro
+        Product.findByPk(id ,filtro
         )
-            .then((result) => {
+        .then((result) => {
+            //return res.send (result)
                 return res.render('product',  { product: result.dataValues })
             }).catch((err) => {
                 console.log(err);
@@ -32,14 +33,15 @@ const productController = {
 
     store: (req, res) => {
         let info = req.body;
+        req.body.userId = req.session.user.id;
         let shoe = {
         modelo: info.modelo,
         descripcion: info.descripcion,
         imagen: req.file.filename,
-        product: info.product
+        product: info.product,
+        userId: info.userId
         };
-        
-        
+        // if (req.file) req.body.imagen = (req.file.path).replace('public', '');
 
         Product.create(shoe)
             .then(() => {
@@ -118,11 +120,11 @@ const productController = {
         let comentario = {
             comentario: info.comentario,
             products_id: req.params.id,
-            users_id: req.session.user.id,
+            userId: req.session.user.id,
         }
         comment.create(comentario)
         .then((result) => {
-            return res.redirect('/products/id/' + req.params.id)
+            return res.redirect('/product/' + req.params.id)
         }).catch((err) => {
             console.log(err);
         });

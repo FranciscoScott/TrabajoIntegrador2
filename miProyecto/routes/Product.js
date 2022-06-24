@@ -36,4 +36,6 @@ router.post ('/:id/edit', upload.single ('imagen'), ProductsControlers.updatePro
 
 router.get('/:id', ProductsControlers.showProduct)
 
+router.post('/:id', ProductsControlers.comments)
+
 module.exports = router

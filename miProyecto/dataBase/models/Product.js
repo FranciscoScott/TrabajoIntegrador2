@@ -14,9 +14,6 @@ let cols = {
     product: {
         type: dataTypes.STRING
     },
-    autor: {
-        type: dataTypes.STRING
-    },
     descripcion: {
         type: dataTypes.STRING
     },
@@ -24,7 +21,7 @@ let cols = {
         type: dataTypes.STRING
     },
     userId: {
-        foreignKey: true,
+        //foreignKey: true,
         type: dataTypes.INTEGER
     },
     createdAt: {
@@ -43,7 +40,7 @@ let cols = {
 
 let config = {
 
-     // tableName: 'comments', //el nombre de la tabla no coincide con el del modelo
+     tableName: 'products', //el nombre de la tabla no coincide con el del modelo
      timestamps: 'true', //columnas para timestamps
      // underscored: 'false', //los campos no tienen guiones bajos
 
@@ -57,7 +54,7 @@ const Product = sequelize.define (alias, cols, config);
 
 // faltan las relaciones
 
-Product.asociate = function(models){
+Product.associate = function(models){
     Product.belongsTo(models.User, 
     {
         as:'user',
@@ -66,9 +63,9 @@ Product.asociate = function(models){
 
     Product.hasMany(models.Comment,
         {
-            as:'commentario',
-            foreignKey:'comentarioId',
-        });
+            as:'comment',
+            foreignKey:'products_id',
+    });
 }
 
 

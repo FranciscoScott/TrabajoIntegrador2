@@ -8,9 +8,16 @@ const bcrypt = require('bcryptjs');
 const profileController = {
     showProfile: function (req, res) {
         let id = req.params.id;
-        user.findByPk(id, {all: true, nested: true})
-            .then((result) => {
-                return res.render('profile', { profile: result.dataValues})
+        user.findByPk(id,  {
+            include:
+            {
+                all: true,
+                nested: true
+            }
+        })
+            .then((result) => { 
+                //return res.send (result)
+                return res.render('profile', { user: result.dataValues})
             }).catch((err) => {
                 console.log(err);
             });

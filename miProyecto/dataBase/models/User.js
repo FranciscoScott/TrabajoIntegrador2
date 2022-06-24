@@ -37,7 +37,7 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
 
-     // tableName: 'comments', //el nombre de la tabla no coincide con el del modelo
+     tableName: 'users', //el nombre de la tabla no coincide con el del modelo
      timestamps: 'true', //columnas para timestamps
      // underscored: 'false', //los campos no tienen guiones bajos
 
@@ -47,17 +47,17 @@ deletedAt: 'deletedAt'
     }
     const User = sequelize.define(alias, cols, config);
 
-    User.asociate = function(models){
+    User.associate = function(models){
         User.hasMany(models.Product, 
         {
-            as:'product',
-            foreignKey: 'productId'
+            as:'products',
+            foreignKey: 'userId'
         });
     
         User.hasMany(models.Comment,
             {
                 as:'comment',
-                foreignKey:'commentId',
+                foreignKey:'userId',
             });
     }
 

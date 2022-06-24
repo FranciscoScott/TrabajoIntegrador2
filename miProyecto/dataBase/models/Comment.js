@@ -13,11 +13,11 @@ module.exports = function (sequelize, dataTypes) {
         comentario : {
             type: dataTypes.STRING,
         },
-        productsId: {
+        products_id: {
             type: dataTypes.INTEGER,
         },
         userId: {
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
         },
         createdAt: {
             type: dataTypes.DATE
@@ -35,7 +35,7 @@ module.exports = function (sequelize, dataTypes) {
 
     
         
-      // tableName: 'comments', //el nombre de la tabla no coincide con el del modelo
+      tableName: 'comments', //el nombre de la tabla no coincide con el del modelo
        timestamps: 'true', //columnas para timestamps
       // underscored: 'false', //los campos no tienen guiones bajos
 
@@ -52,13 +52,13 @@ module.exports = function (sequelize, dataTypes) {
     Comment.associate = function (models) {
         Comment.belongsTo(models.Product, {
             as: 'product',
-            foreignKey : 'productsId'
+            foreignKey : 'products_id'
         })
         Comment.belongsTo(models.User, {
             as : 'user',
             foreignKey : 'userId'
         })
-    }
+}
     
     
     

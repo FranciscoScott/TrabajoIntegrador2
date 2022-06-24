@@ -5,7 +5,10 @@ const products = db.Product
 //un metodo para cada request
 const indexController = {
     index: function (req, res) {
-        products.findAll()
+        products.findAll( {
+            include: [ { association: 'user' }],
+            order: [[ "createdAt" , "DESC"]]
+        })
         .then(function(results){
             return res.render('index', {producto : results})
         })
