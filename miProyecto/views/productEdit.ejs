@@ -18,12 +18,12 @@
 <p> <%= error %> </p>
 <% }else{ %> 
 			<div class="col-12">
-				<h2 class="products-title">Edit artworks</h2>
+				<h2 class="products-title">Edit product</h2>
 			</div>
 
 			<!-- form -->
 			<h2 class="col-14"> 
-				<form method="post" enctype="multipart/form-data" action="/artworks/<%= product.id %>/edit"> 
+				<form method="post" enctype="multipart/form-data" action="<%= product.id %>/edit"> 
 
 					<div class="AddProduct"> 
 						<label for="name" class="form-label">Product Name</label>
@@ -32,18 +32,18 @@
 
 					<div class="AddProduct"> 
 						<label for="description" class="form-label">Description </label>
-						<input type="text" class="form-control" id="description" name="description" value="<%= product.descripcion%>" placeholder="Make sure your description is as representative as possible...">   
+						<input type="text" class="form-control" id="description" name="descripcion" value="<%= product.descripcion%>" placeholder="Make sure your description is as representative as possible...">   
 					</div>
 
 					<div class="AddProduct"> 
 						<label for="image" class="form-label">Add Image</label>
-						<input type="file" class="form-control" name="image" id="image" value="<%= product.imagen%>">
+						<input type="file" class="form-control" name="imagen" id="image" value="<%= product.imagen%>">
 					</div>
 
 					<input type="hidden" class="form-control" id="date" name="date" value="<%= product.userId%>" >
 					
 		
-					<button type="submit" class="btn btn primary"> Update artwork </button>
+					<button type="submit" class="btn btn primary"> Update product </button>
 				</form>
 			</h2>
 			<!-- form -->
